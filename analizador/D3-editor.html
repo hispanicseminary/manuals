@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>D. Trabajando con el *Analizador Corpus OSTA*</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="font-awesome.min.css" rel="stylesheet">
+
+    <link href="Theme.css" rel="stylesheet">
+
+    <script src="jquery.min.js"></script>
+    <link href="twilight.css" rel="stylesheet">
+    <script src="highlight.pack.js"></script>
+    <script src="highlightjs-badge.js"></script>
+    <script src="preview.js" id="PreviewScript"></script>
+    
+</head>
+<body>
+<div id="MainContent">
+    <!-- Markdown Monster Content -->
+    <h1 id="d-trabajando-con-el-analizador-corpus-osta">D. Trabajando con el <em>Analizador Corpus OSTA</em></h1>
+<h2 id="3-edición-del-diccionario-del-lematizador">3. Edición del diccionario del lematizador</h2>
+<p>La última funcionalidad del <em>Analizador Corpus OSTA</em> es la edición del diccionario de formas utilizado por el lematizador. Para ello es necesario procesar una transcripción haciendo clic en <strong>procesar uno o más textos</strong>, o seleccionar una transcripción ya procesada haciendo clic en <strong>listar textos</strong> en la <strong>barra de selección de procesos</strong> y luego seleccionando en la <strong>barra de textos</strong> el fichero <code>TEXT.SIGLA.tagged</code> correspondiente.</p>
+<center><p><img src="images/13-editor.jpg" alt="figura 13"></p></center>
+<p>Tras la cabecera aparece el texto, manteniendo la disposición en página (foliación, encabezamiento, columnas de texto, signaturas y reclamos). Al hacer clic en cualquier palabra aparecen en el <strong>analizador</strong> los diferentes componentes del análisis.</p>
+<center><p><img src="images/14-editor.jpg" alt="figura 14"></p></center>
+<ul>
+<li><strong>Forma:</strong> muestra la palabra según aparece en la transcripción</li>
+<li><strong>Lema propuesto:</strong> muestra el lema asignado a la forma. En las palabras que aparecen definidas en el diccionario, se asigna el lema correspondiente. En las palabras que <strong>no</strong> aparecen definidas el diccionario, todas aquellas en rojo, el lema propuesto suele corresponder con la forma.</li>
+<li><strong>Etiqueta asignada:</strong> muestra la etiqueta morfológica asignada por el lematizador. El conjunto de etiquetas morfológicas utilizadas se basa en las propuestas por el grupo Expert Advisory Group on Language Engineering Standards <a href="http://www.ilc.cnr.it/EAGLES/browse.html">(EAGLES)</a>.</li>
+<li><strong>Otros análisis posibles</strong>: muestra los diferentes análisis posibles de cualquier palabra. Para saber qué palabras tienen múltiples análisis basta con hacer hacer clic en <strong>Ver análisis múltiple</strong> para mostrarlas en un color diferente</li>
+</ul>
+<center><p><img src="images/15-editor.jpg" alt="figura 15"></p></center>
+<p>Para editar el diccionario es necesario seguir los siguientes pasos:</p>
+<ol>
+<li>Seleccionar una de las palabras, generalmente aquellas que aparecen en rojo.</li>
+<li>Editar manualmente el lema y la etiqueta morfológica asignada. Para este segundo proceso, si se desconoce la etiqueta morfológica correspondiente, es posible utilizar el botón  <code>?</code>  que muestra una ventana de ayuda para el etiquetado donde se seleccionan todos los elementos necesarios para definir la etiqueta. Para que la etiqueta aparezca en la caja de <strong>Etiqueta asignada</strong> basta con hacer clic en <strong>finalizar</strong>.</li>
+</ol>
+<center><p><img src="images/16-editor.jpg" alt="figura 16"></p></center>
+<ol start="3">
+<li>Añadir la nueva entrada al diccionario haciendo clic en <strong>Añadir</strong> (en el caso de tratarse de una palabra no lematizada o analizada en el diccionario) o <strong>Modificar</strong> (en el caso de tratarse de una palabra cuya lematización y análisis se quiere editar). En unos segundos aparecerá una ventana confirmando que la entrada ha sido modificada; basta con hacer clic en  <strong>OK</strong>  para cerrarla.</li>
+</ol>
+<p>Haciendo clic en <strong>Reanalizar</strong> se vuelve a procesar la transcripción con el nuevo diccionario. Las entradas que antes aparecían en rojo, aparecen ahora en negro.</p>
+<p>El diccionario que FreeLing utiliza para el procesado de los textos, <code>hsms.src</code>, es un fichero en formato UTF-8 localizado en la carpeta <code>C:\HSMS-tools\analizador\hsms-es\</code>.</p>
+<p>Las entradas simples ocupan una única línea con la <strong>forma</strong> seguida por el <strong>lema</strong> y la <strong>etiqueta morfológica</strong>: <code>forma lema PoS</code></p>
+<blockquote>
+<p>contygo contigo PP2CSO00<br>
+guirlanda guirnalda NCFS000<br>
+reuuscassen rebuscar VMSI3P0<br>
+thiriaca triaca NCFS000</p>
+</blockquote>
+<p>Las entradas correspondientes a formas homógrafas contienen más de un lema y etiqueta morfológica: <code>forma lema1 PoS1 lema2 PoS2</code></p>
+<blockquote>
+<p>casa casa NCFS000 casar VMIP3S0 casar VMM02S0<br>
+esto estar VAIP1S0 este PD0NS000<br>
+furto hurtar VMIP1S0 hurtar VMIS3S0 hurto NCMS000<br>
+manleuase manlevar VMSI1S0 manlevar VMSI3S0<br>
+vinno venir VMIS3S0 vino NCMS000</p>
+</blockquote>
+<p>Las entradas correspondientes a formas aglutinadas, cuyos componentes son analizados individualmente, tienen un formato similar: <code>forma forma1+forma2 PoS1+PoS2</code>, donde <code>forma1</code>, <code>forma2</code> son las formas (no los lemas) de las palabras aglutinadas. Por ejemplo:</p>
+<blockquote>
+<p>acoraçon a+coraçon SP+NC</p>
+</blockquote>
+<p>Esta línea expresa que siempre que se encuentra la forma <strong>acoraçon</strong>, esta es reemplazada por sus componentes: <code>a</code> y <code>coraçon</code>, asignándose a cada uno de ellos la etiqueta, <code>PoS1</code> y <code>PoS2</code> definida en su entrada correspondiente.</p>
+<blockquote>
+<p>a a NCFS000 a SPS00 haber VAIP3S0 haber VMIP3S0<br>
+coraçon corazón NCMS000</p>
+</blockquote>
+<p>De este modo, <code>a</code> será analizado como <code>SP</code>  y <code>coraçon</code> como <code>NCMS000</code>.</p>
+<p>Un número reducido de entradas de formas aglutinadas tienen la siguiente estructura: <code>forma forma1+forma2 PoS1+PoS2/PoS2</code>.</p>
+<blockquote>
+<p>avna a+una SP+PI/DI<br>
+poral pora+el SP+DA/PP</p>
+</blockquote>
+<p>En estos casos la barra <code>/</code> separa dos posibles análisis, que FreeLing determina utilizando el módulo de probabilidades.</p>
+<p>Cuando se edita el diccionario con el <em>Analizador Corpus OSTA</em> las nuevas entradas aparecen al final del fichero <code>hsms.src</code> entre las etiquetas <code>&lt;Entries&gt; &lt;/Entries&gt;</code> . Estas nuevas entradas también aparecen en el fichero <code>additions-hsms.src</code>, en la carpeta <code>C:\HSMS-tools\analizador\hsms-es\</code>.</p>
+<p>A continuación, se ofrece una serie de ejemplos para mostrar el proceso de edición/modificación de las entradas del diccionario. La columna de la izquierda corresponde a las diferentes cajas de texto del <strong>analizador</strong> y la de la derecha al texto que se introduce en cada una de ellas.</p>
+<h3 id="31-formas-simples">3.1 formas simples:</h3>
+<p>Son aquellas que contienen un lema y un único análisis morfológico.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">prophanados</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto:</strong></td>
+<td style="text-align: left;">profanar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">VMP00PM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>El guion bajo <code>_</code> es utilizado para separar los dos elementos que componen el lema.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">tituliuio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto:</strong></td>
+<td style="text-align: left;">Tito_Livio</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">NP000P0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-formas-con-otros-análisis-posibles">3.2 formas con otros análisis posibles:</h3>
+<p>Son aquellas que contienen varios lemas y/o análisis morfológicos. La arroba <code>@</code> sirve para separar el lema y la etiqueta morfológica</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">amare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto:</strong></td>
+<td style="text-align: left;">amar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">VMSF1S0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;">amar@VMSF3S0<br>amar@VMIF1S0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">noziente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto:</strong></td>
+<td style="text-align: left;">nuciente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">AQ0CS0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;">nocir@VMPP0SC</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">coxos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto:</strong></td>
+<td style="text-align: left;">cojo</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">AQ0MP0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;">cojo@NCMP000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-formas-aglutinadas">3.3 formas aglutinadas:</h3>
+<p>Son aquellas que por diferentes procesos de fonética sintáctica y ortográficos aparecen fusionadas en una sola palabra. Estas formas deben ser definidas mediante sus componentes básicos, utilizando la correspondiente forma moderna, no apocopada, de artículos, pronombres y preposiciones, manteniendo la forma original de la palabra con la que se aglutinan:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">ellayre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">ell+ayre</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">DA+NC</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">dindia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">de+india</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">SP+NP</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">sesfuerça</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">se+esfuerça</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">PP+VM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Es fundamental comprobar que cada uno de los componentes de la forma aglutinada aparece correctamente definido en el diccionario <code>hsms.src</code>, de lo contrario el <em>Analizador Corpus OSTA</em> genera un error al procesar los textos. Así, en la forma <code>ellayre</code>, habría que confirmar la existencia de las entradas</p>
+<blockquote>
+<p><code>ell el DA0MS0 él PP3MS000</code>  (<em>que define el artículo</em>)<br>
+<code>ayre aire NCMS000</code> (<em>que define el sustantivo</em>)</p>
+</blockquote>
+<p>Si este no fuera el caso, habría que añadirlas al diccionario.</p>
+<h3 id="34-formas-verboclíticos">3.4 formas verbo+clítico(s):</h3>
+<p>Son formas que combinan un verbo y uno o varios clíticos. Ante una forma como <code>vngendolo</code> solo es preciso definir la forma verbal sin clíticos, para que así el módulo de afijación de FreeLing se encargue de analizar todas las demás combinaciones de esa forma verbal más cualquier otro clítico: <code>vngendote</code>, <code>vngendoles</code>, etc.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">vngendo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">ungir</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">VMG0000</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-formas-verboclíticosauxiliar">3.5 formas verbo+clítico(s)+auxiliar:</h3>
+<p>Son formas que combinan un verbo en infinitivo, uno o varios clíticos y una forma del auxiliar <code>haber</code>. Este tipo de entradas no son procesadas por el módulo de afijación y por lo tanto requieren que se defina cada uno de sus componentes.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">tomarleas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">tomar+le+as</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">VM+PP+VA</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">cubrirseloeys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">cubrir+se+lo+eys</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">VM+PP+PP+VA</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Al igual que en el caso de las formas aglutinadas, es fundamental comprobar que cada uno de los componentes aparece correctamente definido en el diccionario.</p>
+<h3 id="36-formas-adverbiales-en-mente">3.6 formas adverbiales en <em>mente</em>:</h3>
+<p>Este tipo de entradas requiere un tratamiento diferente, según la forma básica del adjetivo. En el caso de <code>afamadamente</code>, donde la forma femenina del adjetivo ya existe o puede ser analizado correctamente por el sistema, solo es necesario asegurarse de que esa forma adjetival esté en el diccionario; en caso contrario es preciso añadirla, para que el módulo de afijación del lematizador se encargue de etiquetarla automáticamente.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">afamada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">afamado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">AQ0FS0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;">afamar@VMP00SF</td>
+</tr>
+</tbody>
+</table>
+<p>En el caso de <code>senyalladament</code>, donde la forma adjetival medieval no se corresponde con la forma moderna: <code>senyallada</code> vs. <code>señalada</code>, simplemente se debe definir la forma de la siguiente manera</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">senyalladament</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">señaladamente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">RM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="37-formas-superlativas">3.7 formas superlativas:</h3>
+<p>En estos casos la forma se define como cualquier otro adjetivo:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Forma:</th>
+<th style="text-align: left;">suauissimas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Lema propuesto</strong></td>
+<td style="text-align: left;">suave</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Etiqueta asignada:</strong></td>
+<td style="text-align: left;">AQ0FP0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Otros análisis posibles:</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+    <!-- End Markdown Monster Content -->
+</div>
+</body>
+</html>

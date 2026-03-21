@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>E. Problemas conocidos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="font-awesome.min.css" rel="stylesheet">
+
+    <link href="Theme.css" rel="stylesheet">
+
+    <script src="jquery.min.js"></script>
+    <link href="twilight.css" rel="stylesheet">
+    <script src="highlight.pack.js"></script>
+    <script src="highlightjs-badge.js"></script>
+    <script src="preview.js" id="PreviewScript"></script>
+    
+</head>
+<body>
+<div id="MainContent">
+    <!-- Markdown Monster Content -->
+    <h1 id="e-problemas-conocidos">E. Problemas conocidos</h1>
+<h2 id="1-copias-de-seguridad">1. Copias de seguridad</h2>
+<p>Para poder recuperar una versión de <code>hsms.src</code> que funcione correctamente es conveniente trabajar con dos ficheros <code>master-hsms.src</code> y <code>hsms.src</code>, inicialmente idénticos, pero que tras una sesión de trabajo cambian ya que el <em>Analizador Corpus OSTA</em> solo efectúa cambios en <code>hsms.src</code>. De esta forma es posible recuperar una versión funcional de <code>hsms.src</code> en caso de que hubiera un error. Herramientas como <a href="https://winmerge.org/">WinMerge</a>, para Windows, o <a href="https://meldmerge.org/">Meld</a>, para Mac, permiten comparar los ficheros y detectar así los posibles errores.</p>
+<h2 id="2-errores-de-formateado-de-las-entradas">2. Errores de formateado de las entradas</h2>
+<p>En algunas ocasiones el <em>Analizador Corpus OSTA</em> muestra la siguiente pantalla tras reanalizar una transcripción.</p>
+<center><p><img src="images/17-editor.jpg" alt="figura 17"></p></center>
+<p>Esto indica la existencia de un error en alguna de las entradas del diccionario:</p>
+<ul>
+<li>hay un espacio en blanco <code>˽</code> extra entre alguno de los componentes de una entrada:</li>
+</ul>
+<blockquote>
+<p><code>forma lema1 ˽PoS1</code></p>
+</blockquote>
+<ul>
+<li>hay un espacio en blanco <code>˽</code> extra al comienzo o final de una entrada:</li>
+</ul>
+<blockquote>
+<p><code>˽forma lema1 PoS1</code><br>
+<code>forma lema1 PoS1 2˽</code></p>
+</blockquote>
+<ul>
+<li>no hay espacio en blanco entre alguno de los componentes de una entrada:</li>
+</ul>
+<blockquote>
+<p><code>formalema1 PoS1</code><br>
+<code>forma lema1PoS1</code></p>
+</blockquote>
+<ul>
+<li>en lugar de un espacio en blanco entre cada de los componentes de una entrada hay un guion bajo (<code>_</code>), resultado de no haber usado <code>@</code> para separar lema y análisis morfológico en la caja <strong>Otros análisis posibles</strong>:</li>
+</ul>
+<blockquote>
+<p><code>desamava desamar VMII1S0 desamar_VMII3S0</code></p>
+</blockquote>
+<ul>
+<li>la entrada está mal formada, faltándole alguno de sus componentes</li>
+</ul>
+<blockquote>
+<p><code>forma lema1 PoS1 lema2</code><br>
+<code>forma lema1 lema2 PoS2</code></p>
+</blockquote>
+<h2 id="3-errores-de-definición-de-las-formas-aglutinadas">3. Errores de definición de las formas aglutinadas</h2>
+<p>En algunas ocasiones el <em>Analizador Corpus OSTA</em> no completa el análisis de la transcripción, quedando la operación interrumpida. En la siguiente imagen se ve cómo la columna B no ha sido analizada en su totalidad.</p>
+<center><p><img src="images/18-editor.jpg" alt="figura 18"></p></center>
+<p>Algo que se puede comprobar al hacer clic en el fichero <code>TEXT.SIGLA</code>, en la <strong>barra de textos</strong>, donde se ve que el texto sin analizar aparece en su totalidad.</p>
+<center><p><img src="images/19-editor.jpg" alt="figura 19"></p></center>
+<p>Este tipo de error lo ocasiona el análisis incompleto de una forma aglutinada. Al definir la forma aglutinada <em>degjpto</em> separando sus dos componentes:</p>
+<blockquote>
+<p><code>degjpto d+egjpto SP+NP</code></p>
+</blockquote>
+<p>aunque no hay ningún error en la definición, la forma <code>egjpto</code> no está definida en el diccionario, por lo que <em>Analizador Corpus OSTA</em> no puede continuar procesando el texto cuando se encuentra con esta forma definida parcialmente. Para que no se produzca este tipo de error bastaría con añadir al diccionario el siguiente análisis:</p>
+<blockquote>
+<p><code>egjpto Egipto NP000G0</code></p>
+</blockquote>
+
+    <!-- End Markdown Monster Content -->
+</div>
+</body>
+</html>
