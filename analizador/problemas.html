@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Analizador Corpus OSTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li>
+              <a href="analizador.html"><span class="fa fa-file-text-o mr-3"></span> el analizador</a>
+          </li>
+          <li>
+            <a href="instalwin.html"><span class="fa fa-cog mr-3"></span> instalación Windows <span class="fa fa-windows mr-3"></span></a>
+          </li>
+          <li>
+            <a href="instalmac.html"><span class="fa fa-cog mr-3"></span> instalación Apple <span class="fa fa-apple mr-3"></a>
+          </li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-file-text-o mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="lematizado.html"><span class="fa fa-file-text-o mr-3"></span> lematizador</a>
+          </li>
+          <li>
+            <a href="corrector.html"><span class="fa fa-file-text-o mr-3"></span> corrector</a>
+          </li>
+          <li>
+            <a href="editor.html"><span class="fa fa-file-text-o mr-3"></span> editor</a>
+          </li>
+          <li class="active">
+            <a href="problemas.html"><span class="fa fa-file-text-o mr-3"></span> problemas conocidos</a>
+          </li>
+          <li>
+            <a href="etiquetas.html"><span class="fa fa-tags mr-3"></span> etiquetas HSMS</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Problemas conocidos</h2>
+<h3>Copias de seguridad</h3>
+<p>Para poder recuperar una versión de <code>hsms.src</code> que funcione correctamente es conveniente trabajar con dos ficheros <code>master-hsms.src</code> y <code>hsms.src</code>, inicialmente idénticos, pero que tras una sesión de trabajo cambian ya que el <em>Analizador Corpus OSTA</em> solo efectúa cambios en <code>hsms.src</code>. De esta forma es posible recuperar una versión funcional de <code>hsms.src</code> en caso de que hubiera un error. Herramientas como <a href="https://winmerge.org/">WinMerge</a>, para Windows, o <a href="https://meldmerge.org/">Meld</a>, para Mac, permiten comparar los ficheros y detectar así los posibles errores.</p>
+<h3> Errores de formateado de las entradas</h3>
+<p>En algunas ocasiones el <em>Analizador Corpus OSTA</em> muestra la siguiente pantalla tras reanalizar una transcripción.</p>
+<p><img src="images/17-editor.jpg" alt="figura 17" /></p>
+<p>Esto indica la existencia de un error en alguna de las entradas del diccionario:</p>
+<ul>
+<li>hay un espacio en blanco <code>˽</code> extra entre alguno de los componentes de una entrada:</li>
+</ul>
+<blockquote>
+<p><code>forma lema1 ˽PoS1</code></p>
+</blockquote>
+<ul>
+<li>hay un espacio en blanco <code>˽</code> extra al comienzo o final de una entrada:</li>
+</ul>
+<blockquote>
+<p><code>˽forma lema1 PoS1</code><br>
+<code>forma lema1 PoS1 2˽</code></p>
+</blockquote>
+<ul>
+<li>no hay espacio en blanco entre alguno de los componentes de una entrada:</li>
+</ul>
+<blockquote>
+<p><code>formalema1 PoS1</code><br>
+<code>forma lema1PoS1</code></p>
+</blockquote>
+<ul>
+<li>en lugar de un espacio en blanco entre cada de los componentes de una entrada hay un guion bajo (<code>_</code>), resultado de no haber usado <code>@</code> para separar lema y análisis morfológico en la caja <strong>Otros análisis posibles</strong>:</li>
+</ul>
+<blockquote>
+<p><code>desamava desamar VMII1S0 desamar_VMII3S0</code></p>
+</blockquote>
+<ul>
+<li>la entrada está mal formada, faltándole alguno de sus componentes</li>
+</ul>
+<blockquote>
+<p><code>forma lema1 PoS1 lema2</code><br>
+<code>forma lema1 lema2 PoS2</code></p>
+</blockquote>
+<h3>Errores de definición de las formas aglutinadas</h3>
+<p>En algunas ocasiones el <em>Analizador Corpus OSTA</em> no completa el análisis de la transcripción, quedando la operación interrumpida. En la siguiente imagen se ve cómo la columna B no ha sido analizada en su totalidad.</p>
+<p><img src="images/18-editor.jpg" alt="figura 18" /></p>
+<p>Algo que se puede comprobar al hacer clic en el fichero <code>TEXT.SIGLA</code>, en la <strong>barra de textos</strong>, donde se ve que el texto sin analizar aparece en su totalidad.</p>
+<p><img src="images/19-editor.jpg" alt="figura 19" /></p>
+<p>Este tipo de error lo ocasiona el análisis incompleto de una forma aglutinada. Al definir la forma aglutinada <em>degjpto</em> separando sus dos componentes:</p>
+<blockquote>
+<p><code>degjpto d+egjpto SP+NP</code></p>
+</blockquote>
+<p>aunque no hay ningún error en la definición, la forma <code>egjpto</code> no está definida en el diccionario, por lo que <em>Analizador Corpus OSTA</em> no puede continuar procesando el texto cuando se encuentra con esta forma definida parcialmente. Para que no se produzca este tipo de error bastaría con añadir al diccionario el siguiente análisis:</p>
+<blockquote>
+<p><code>egjpto Egipto NP000G0</code></p>
+</blockquote>
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

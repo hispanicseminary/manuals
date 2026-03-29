@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Analizador Corpus OSTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li>
+              <a href="analizador.html"><span class="fa fa-file-text-o mr-3"></span> el analizador</a>
+          </li>
+          <li>
+            <a href="instalwin.html"><span class="fa fa-cog mr-3"></span> instalación Windows <span class="fa fa-windows mr-3"></span></a>
+          </li>
+          <li>
+            <a href="instalmac.html"><span class="fa fa-cog mr-3"></span> instalación Apple <span class="fa fa-apple mr-3"></a>
+          </li>
+          <li class="active">
+            <a href="interfaz.html"><span class="fa fa-file-text-o mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="lematizado.html"><span class="fa fa-file-text-o mr-3"></span> lematizador</a>
+          </li>
+          <li>
+            <a href="corrector.html"><span class="fa fa-file-text-o mr-3"></span> corrector</a>
+          </li>
+          <li>
+            <a href="editor.html"><span class="fa fa-file-text-o mr-3"></span> editor</a>
+          </li>
+          <li>
+            <a href="problemas.html"><span class="fa fa-file-text-o mr-3"></span> problemas conocidos</a>
+          </li>
+          <li>
+            <a href="etiquetas.html"><span class="fa fa-tags mr-3"></span> etiquetas HSMS</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Descripción de la interfaz</h2>
+<p>La interfaz de trabajo del <em>Analizador Corpus OSTA</em> consta de los siguientes elementos:</p>
+<p><img src="images/03-interfaz.jpg" alt="figura 3" /></p>
+<ol>
+<li><strong>barra de selección de procesos:</strong> contiene los botones para procesar transcripciones nuevas (<code>Procesar uno o más textos</code>, <code>Procesar corpus completo</code>) y para cargar transcripciones ya analizadas (<code>Listar textos</code>).</li>
+<li><strong>barra de textos:</strong> en esta columna aparecen listadas las transcripciones procesadas.</li>
+<li><strong>ventana de texto:</strong> se muestra la transcripción procesada en la que se han resuelto las abreviaturas, se indican añadidos y supresiones, manteniéndose la disposición del texto en el códice (foliación, columnas, cabeceras, signaturas y reclamos). El etiquetado morfológico es visible al pasar el cursor por encima de una palabra.</li>
+<li><strong>caja de búsquedas:</strong> permite hacer consultas – palabras completas, fragmentos, secuencias de caracteres o expresiones regulares–-dentro de la transcripción paleográfica. Pueden utilizarse los siguientes comodines:</li>
+</ol>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>comodín</th>
+<th>significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>equivale a un único carácter: <code>n.n</code>, para encontrar <em>nin</em>, <em>njn</em> y <em>nyn</em>.</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>el carácter que le precede puede aparecer cero veces o una vez: <code>arciprestes?</code>, para encontrar <em>arcipreste</em> y <em>arciprestes</em>.</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>el carácter que le precede puede aparecer cero o más veces: <code>s*c</code>, para encontrar tanto <em>ciencia</em> como <em>sciencia</em>.</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>el carácter que le precede puede aparecer una o más veces: <code>ab+ades</code>, para encontrar <em>abades</em> y <em>abbades</em>.</td>
+</tr>
+<tr>
+<td><code>[ ]</code></td>
+<td>cualquiera de los caracteres dentro de los corchetes puede aparecer como mucho una vez: <code>ar[cç][ei]</code>, para encontrar <em>arcediano</em>, <em>arcedianos</em>, <em>arçediano</em>, <em>arçedianos</em>, <em>arcipreste</em>, <em>arciprestes</em>, <em>arçipreste</em> y <em>arçiprestes</em>.</td>
+</tr>
+<tr>
+<td><code>[^ ]</code></td>
+<td>cualquier carácter excepto los que están dentro de los corchetes: <code>[^r]icos</code>, para encontrar <em>chicos</em>, <em>magicos</em> pero no <em>ricos</em>.</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>para marcar el comienzo o final de una palabra: <code>adgo\b</code>, para encontrar todas las palabras que terminan en <em>adgo</em>; <code>\buvies</code>, para encontrar <em>uviese</em>, <em>uviesen</em>, <em>vuiesen</em>, <em>uviesse</em>, <em>uviessen</em>, <em>vuiessen</em>.</td>
+</tr>
+<tr>
+<td><code>\s</code></td>
+<td>cualquier carácter de espacio en blanco: <code>la\scriatura</code>, para encontrar todos los caso de <em>la criatura</em>.</td>
+</tr>
+</tbody>
+</table>
+<ol start="5">
+<li><strong>analizador:</strong> se muestran los diferentes componentes del análisis de la palabra seleccionada--forma, lema propuesto, etiqueta asignada, otros análisis posibles.</li>
+</ol>
+<p>El <em>Analizador Corpus OSTA</em> es una herramienta diseñada para trabajar en diferentes fases del proceso de elaboración del <em>Old Spanish Textual Archive</em>: 1) lematizado y etiquetado morfológico de las transcripciones, 2) corrección de las transcripciones paleográficas, y 3) edición y ampliación del diccionario utilizado por el lematizador.</p>
+<p>Para procesar una transcripción o un conjunto de transcripciones es preciso hacer clic en <code>Procesar uno o más textos</code> o <code>Procesar corpus completo</code> en la <strong>barra de selección de procesos</strong>, y seleccionar los ficheros correspondientes en la ventana que aparece en la pantalla.</p>
+<p><img src="images/04-interfaz.jpg" alt="figura 4" /></p>
+<p>El procesado de las transcripciones puede durar entre 1 y 3 minutos si se trata de una única transcripción, o de varias horas si lo que se procesa es un corpus completo. Durante el procesado la <strong>ventana de texto</strong> permanece en blanco, apareciendo en ella la transcripción una vez procesada.</p>
+<p><img src="images/05-interfaz.jpg" alt="figura 5" /></p>
+<p>Los dos cuadros que aparecen antes del texto constituyen la cabecera del texto. El cuadro superior muestra los metadatos de los textos ya indexados en el <em>Old Spanish Textual Archive</em>, y estará vacío en los textos sin indexar. El cuadro inferior muestra la información contenida en los campos <code>RMK:</code> situados al comienzo de todas las transcripciones hechas siguiendo las normas del HSMS:</p>
+<blockquote>
+<p>{RMK: <em>código alfanumérico del códice</em>.}<br>
+{RMK: <em>autor</em>.}<br>
+{RMK: [<em>código alfanumérico de la transcripción</em>] <em>título</em>.}<br>
+{RMK: <em>ciudad</em> | <em>impresor</em> | <em>fecha de impresión</em>.}<br>
+{RMK: <em>ciudad</em> | <em>biblioteca</em> | <em>signatura</em>.}<br>
+{RMK: <em>nombre del transcriptor</em>.}</p>
+</blockquote>
+<p>de esta manera para los textos manuscritos</p>
+<blockquote>
+<p>{RMK: HSMS-0114.}<br>
+{RMK: Ruy González de Clavijo.}<br>
+{RMK: [TAM] Historia del gran Tamorlán.}<br>
+{RMK:.}<br>
+{RMK: Madrid | Biblioteca Nacional de España | MSS/9218.}<br>
+{RMK: Juan Luis Rodríguez Bravo, María del Mar Martínez Rodríguez.}<br></p>
+</blockquote>
+<p>y de esta otra para los impresos</p>
+<blockquote>
+<p>{RMK: HSMS-0161.}<br>
+{RMK: desconocido.}<br>
+{RMK: [VLT] Gran conquista de Ultramar.}<br>
+{RMK: Salamanca | Hans Giesser | 1503.}<br>
+{RMK: Madrid | Biblioteca Nacional de España | R/518, R/519.}<br>
+{RMK: Ray Harris-Northall.}<br></p>
+</blockquote>
+<p>Para seleccionar una transcripción previamente procesada y comenzar o continuar el proceso de corrección es necesario hacer clic en <strong>Listar textos</strong>, y seleccionar en la ventana la carpeta que contiene las transcripciones procesadas con las que se quiere trabajar.</p>
+<p><img src="images/06-interfaz.jpg" alt="figura 6" /></p>
+<p>mostrándose en la <strong>barra de textos</strong> el nombre de todos los ficheros disponibles.</p>
+<p><img src="images/07-interfaz.jpg" alt="figura 7" /></p>      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

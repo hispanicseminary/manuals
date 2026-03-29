@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Analizador Corpus OSTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li>
+              <a href="analizador.html"><span class="fa fa-file-text-o mr-3"></span> el analizador</a>
+          </li>
+          <li>
+            <a href="instalwin.html"><span class="fa fa-cog mr-3"></span> instalación Windows <span class="fa fa-windows mr-3"></span></a>
+          </li>
+          <li class="active">
+            <a href="instalmac.html"><span class="fa fa-cog mr-3"></span> instalación Apple <span class="fa fa-apple mr-3"></a>
+          </li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-file-text-o mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="lematizado.html"><span class="fa fa-file-text-o mr-3"></span> lematizador</a>
+          </li>
+          <li>
+            <a href="corrector.html"><span class="fa fa-file-text-o mr-3"></span> corrector</a>
+          </li>
+          <li>
+            <a href="editor.html"><span class="fa fa-file-text-o mr-3"></span> editor</a>
+          </li>
+          <li>
+            <a href="problemas.html"><span class="fa fa-file-text-o mr-3"></span> problemas conocidos</a>
+          </li>
+          <li>
+            <a href="etiquetas.html"><span class="fa fa-tags mr-3"></span> etiquetas HSMS</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Instalación en ordenadores Apple</h2>
+<p>El <em>Analizador Corpus OSTA</em> no funciona de forma nativa en los ordenadores Apple, pero es posible utilizarlo por medio de una virtualización del sistema operativo Windows. La mejor opción para los ordenadores Apple con procesadores M (M1, M2, M3 y M4) es utilizar <a href="https://mac.getutm.app/">UTM</a>. Además, es necesario un instalador de Windows 11 y, para evitar problemas, una clave de producto de Windows.</p>
+<p>Lo mejor es seguir las instrucciones que se dan para cada una de las versiones de Windows en la <a href="https://mac.getutm.app/gallery/">pestaña galería</a>, desde la que se podrá obtener un <a href="https://docs.getutm.app/guides/windows/">instalador Windows 11</a> con arquitectura para los ordenadores Apple.</p>
+<p>Una vez instalado UTM, hay que instalar la virtualización de Windows. Este <a href="https://www.youtube.com/watch?v=grvpAKZbZU0">vídeo</a> muestra el procedimiento de instalar la virtualización de Windows en un Mac con procesadores M.</p>
+<p><img src="images/20-mac.jpg" alt="figura 20" /></p>
+<p>Una vez instalado (primero) UTM y (después) Windows 11, hay que instalar el <em>Analizador Corpus OSTA</em>. Lo mejor es descargarlo desde dentro de Windows, no copiarlo por medio de la carpeta compartida entre ambos sistemas operativos, ya que los ficheros de más de 30MB no pueden ser copiados.</p>
+<p><img src="images/21-mac.jpg" alt="figura 21" /></p>
+<p>Si el <em>Analizador Corpus OSTA</em> se ha descargado como un fichero zip, tan solo hay que descomprimir el fichero en el directorio raíz, en <code>C:\</code>, nunca en el Escritorio ni ningún otro nivel inferior a <code>C:\</code> porque podría dar error debido a la extrema longitud de las rutas.</p>
+<p><img src="images/22-mac.jpg" alt="figura 22" /></p>
+<p>Para iniciar <em>Analizador Corpus OSTA</em> basta con hacer clic en <code>analizador-Corpus-OSTA</code> dentro de <code>C:\HSMS-tools\analizador</code>, o en la carpeta donde se haya instalado.</p>
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Analizador Corpus OSTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li>
+              <a href="analizador.html"><span class="fa fa-file-text-o mr-3"></span> el analizador</a>
+          </li>
+          <li>
+            <a href="instalwin.html"><span class="fa fa-cog mr-3"></span> instalación Windows <span class="fa fa-windows mr-3"></span></a>
+          </li>
+          <li>
+            <a href="instalmac.html"><span class="fa fa-cog mr-3"></span> instalación Apple <span class="fa fa-apple mr-3"></a>
+          </li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-file-text-o mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="lematizado.html"><span class="fa fa-file-text-o mr-3"></span> lematizador</a>
+          </li>
+          <li class="active">
+            <a href="corrector.html"><span class="fa fa-file-text-o mr-3"></span> corrector</a>
+          </li>
+          <li>
+            <a href="editor.html"><span class="fa fa-file-text-o mr-3"></span> editor</a>
+          </li>
+          <li>
+            <a href="problemas.html"><span class="fa fa-file-text-o mr-3"></span> problemas conocidos</a>
+          </li>
+          <li>
+            <a href="etiquetas.html"><span class="fa fa-tags mr-3"></span> etiquetas HSMS</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Corrección de las transcripciones</h2>
+<p>El <em>Analizador Corpus OSTA</em> puede ser utilizado también durante el proceso de corrección de las transcripciones paleográficas. Una vez procesada la transcripción que se se desea corregir, la pantalla muestra <code>TEXT.SIGLA.tagged.html</code> con las abreviaturas resueltas, los añadidos y supresiones marcados; el etiquetado morfológico (visible al pasar el cursor por encima de una palabra); y una serie de palabras marcadas en azul o en rojo.</p>
+<p><img src="images/11-rojoazul.jpg" alt="figura 11" /></p>
+<p>Las palabras en azul corresponden a aquellas analizadas como verbo+clítico, aunque en algunas ocasiones el análisis no es correcto, por lo que es siempre conveniente revisar estas formas. Las palabras en rojo corresponden a aquellas que no han podido ser analizadas por no encontrarse en el diccionario, pudiéndose tratar de palabras transcritas correctamente, pero aún no lematizadas y analizadas, o de errores de transcripción.</p>
+<p>El <em>Analizador Corpus OSTA</em> no permite corregir el texto directamente desde la interfaz, siendo necesario trabajar con el fichero que contiene la transcripción <code>TEXT.SIGLA.txt</code>, en un editor de texto plano como <a href="https://notepad-plus-plus.org/">Notepad++</a>, para Windows, o <a href="https://www.barebones.com/products/bbedit/">BBEdit</a>, para Mac.</p>
+<p><img src="images/12-editor.jpg" alt="figura 12" /></p>
+<p>Para trabajar con una transcripción previamente procesada, es necesario hacer clic en <strong>listar textos</strong> en la <strong>barra de selección de procesos</strong> y luego seleccionar el fichero <code>TEXT.SIGLA.tagged</code> correspondiente en la <strong>barra de textos</strong>.</p>
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

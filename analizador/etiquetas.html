@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Analizador Corpus OSTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li>
+              <a href="analizador.html"><span class="fa fa-file-text-o mr-3"></span> el analizador</a>
+          </li>
+          <li>
+            <a href="instalwin.html"><span class="fa fa-cog mr-3"></span> instalación Windows <span class="fa fa-windows mr-3"></span></a>
+          </li>
+          <li>
+            <a href="instalmac.html"><span class="fa fa-cog mr-3"></span> instalación Apple <span class="fa fa-apple mr-3"></a>
+          </li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-file-text-o mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="lematizado.html"><span class="fa fa-file-text-o mr-3"></span> lematizador</a>
+          </li>
+          <li>
+            <a href="corrector.html"><span class="fa fa-file-text-o mr-3"></span> corrector</a>
+          </li>
+          <li>
+            <a href="editor.html"><span class="fa fa-file-text-o mr-3"></span> editor</a>
+          </li>
+          <li>
+            <a href="problemas.html"><span class="fa fa-file-text-o mr-3"></span> problemas conocidos</a>
+          </li>
+          <li class="active">
+            <a href="etiquetas.html"><span class="fa fa-tags mr-3"></span> etiquetas HSMS</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Etiquetas HSMS</h2>
+<p>Todas las transcripciones paleográficas realizadas por los colaboradores del Hispanic Seminary of Medieval Studies (HSMS) siguen el método establecido  en 1977 por David Mackenzie y Kenneth Buelow en <a href="http://hispanicseminary.org/docs/OSTA-manual.pdf"><em>A Manual of Manuscript Transcription for the Dictionary of the Old Spanish Language</em></a>, cuyo propósito inicial fue fijar las normas de transcripción utilizadas por el <em>Dictionary of the Old Spanish Language</em>. Según estas normas, el texto se transcribe línea por línea, respetando la disposición del texto en la página y cada uno de sus elementos (cabeceras, columnas, rúbricas, glosas, miniaturas, etc.), manteniendo la ortografía del texto y el sistema de abreviaturas, e identificando las intervenciones (adiciones y supresiones) de copistas, correctores y editores. Para ello se emplea una serie de etiquetas o mnemónicos,</p>
+<p>La tecnología informática existente cuando se desarrollaron los programas utilizados en la elaboración del <em>Dictionary of the Old Spanish Language</em> impuso dos limitaciones importantes que condicionaron el formato de las transcripciones: el juego de caracteres disponible y el lenguaje de marcado. El juego de caracteres existente era US-ASCII, basado en el alfabeto latino, tal como se usa en inglés moderno, y que unicamente cuenta con 128 caracteres disponibles, 32 de ellos no imprimibles, con lo que en realidad solo pueden ser utilizados los siguientes 95 caracteres:</p>
+<p><img src="images/23-ascii.jpg" alt="figura 23" /></p>
+<p>En consecuencia, las limitaciones de US-ASCII obligaron a utilizar soluciones creativas para representar de la forma más fiel posible la variada ortografía de los textos medievales:</p>
+<ul>
+<li>c'	para ç</li>
+<li>s'	para σ</li>
+<li>z'	para ƽ</li>
+<li>n~	para ñ</li>
+<li>h~	para ħ</li>
+</ul>
+<p>Por lo que se refiere al lenguaje de marcado con el que se codifican las etiquetas, que siempre aparecen encerradas entre <code>{ }</code>, se trata de una adaptación del IBM Generalized Markup Language (GML), que, al contrario que los lenguajes de marcado modernos (HTML o XML), solo diferenciaba las etiquetas de apertura, utilizando <code>}</code> para cerrar todas ellas.</p>
+<p>En el año 2015, cuando se comenzó a diseñar el <a href="http://osta.oldspanishtextualarchive.org/"><em>Old Spanish Textual Archive</em></a>, el HSMS contaba ya con unas 300 transcripciones (más de 20 millones de palabras) hechas siguiendo estas normas, lo que llevó a plantear dos opciones: retranscribir todos los textos con unas nuevas normas, TEI , y utilizar juegos de caracteres más amplios, Unicode, o desarrollar un sistema que permitiera la utilización de las transcripciones originales, adaptándolas a un formato moderno que permitiera su manipulación con nuevas herramientas. Afortunadamente, la sistematicidad del método de transcripción facilitó la creación de una serie de scripts para verter las transcripciones a un formato actualizado y menos limitado. De esta forma fue posible convertir los textos originales US-ASCII/GML a Unicode/XML.</p>
+<p>Las siguientes tablas catalogan todas las etiquetas del HSMS, que siguen siendo empleadas hoy en día en la transcripción paleográfica de nuevos textos, el equivalente en XLM/Unicode utilizado en los ficheros <code>TEXT.SIGLA.vrt.html</code>, y una breve explicación de su significado.</p>
+<h3>Etiquetas estructurales</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>HSMS</th>
+<th>XML</th>
+<th>significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[fol. ]</td>
+<td>&lt;folio&gt; &lt;/folio&gt;</td>
+<td>folio, hoja de un libro o cuaderno, consta de recto y vuelto: <code>[fol. 7r]</code>, <code>[fol. 7v]</code></td>
+</tr>
+<tr>
+<td>{HD.}</td>
+<td>&lt;HD&gt; &lt;/HD&gt;</td>
+<td>encabezamiento, título corrido situado en la parte superior del folio: <code>{HD. LEVITICUS}</code></td>
+</tr>
+<tr>
+<td>{CB1.}</td>
+<td>&lt;CB1&gt; &lt;/CB1&gt;</td>
+<td>folio dispuesto a una columna</td>
+</tr>
+<tr>
+<td>{CB2.}</td>
+<td>&lt;CB2&gt; &lt;/CB2&gt;</td>
+<td>folio dispuesto a dos columnas</td>
+</tr>
+<tr>
+<td>{RUB. }</td>
+<td>&lt;RUB&gt; &lt;/RUB&gt;</td>
+<td>rúbrica, epígrafe o titulo que precede a una sección textual</td>
+</tr>
+<tr>
+<td>{IN3.}</td>
+<td>&lt;IN3&gt; &lt;/IN3&gt;</td>
+<td>inicial, el numeral indica las líneas de texto que abarca: <code>{IN3.} Esos</code></td>
+</tr>
+<tr>
+<td>{CW. }</td>
+<td>&lt;CW&gt; &lt;/CW&gt;</td>
+<td>reclamo, palabra o sílaba que solía ponerse al fin de cada plana, y era la misma con que había de empezar la plana siguiente</td>
+</tr>
+<tr>
+<td>{SG. }</td>
+<td>&lt;SG&gt; &lt;/SG&gt;</td>
+<td>signatura, señal que con las letras del alfabeto o con números se pone al pie de las primeras planas de los pliegos o cuadernos</td>
+</tr>
+<tr>
+<td>{ILL.}</td>
+<td>&lt;ILL&gt; &lt;/ILL&gt;</td>
+<td>iluminación, elemento puramente ornamental que no tiene contenido significativo, ya sea textual o pictórico</td>
+</tr>
+<tr>
+<td>{=ILL.}</td>
+<td>&lt;LMIN&gt; &lt;/LMIN&gt;</td>
+<td>relación con el texto que le precede</td>
+</tr>
+<tr>
+<td>{ILL=.}</td>
+<td>&lt;RMIN&gt; &lt;/RMIN&gt;</td>
+<td>relación con el texto que le sigue</td>
+</tr>
+<tr>
+<td>{=ILL=.}</td>
+<td>&lt;CMIN&gt; &lt;/CMIN&gt;</td>
+<td>relación con el texto que le rodea</td>
+</tr>
+<tr>
+<td>{MIN.}</td>
+<td>&lt;MIN&gt; &lt;/MIN&gt;</td>
+<td>miniatura, elemento con contenido pictórico que, por lo general, ilustra el texto que la acompaña</td>
+</tr>
+<tr>
+<td>{=MIN.}</td>
+<td>&lt;LMIN&gt; &lt;/LMIN&gt;</td>
+<td>relación con el texto que le precede</td>
+</tr>
+<tr>
+<td>{MIN=.}</td>
+<td>&lt;RMIN&gt; &lt;/RMIN&gt;</td>
+<td>relación con el texto que le sigue</td>
+</tr>
+<tr>
+<td>{=MIN=.}</td>
+<td>&lt;CMIN&gt; &lt;/CMIN&gt;</td>
+<td>relación con el texto que le rodea</td>
+</tr>
+<tr>
+<td>{DIAG.}</td>
+<td>&lt;DIAG&gt; &lt;/DIAG&gt;</td>
+<td>diagrama, elemento con contenido gráfico que busca complementar el texto escrito</td>
+</tr>
+<tr>
+<td>{=DIAG.}</td>
+<td>&lt;LMIN&gt; &lt;/LMIN&gt;</td>
+<td>relación con el texto que le precede</td>
+</tr>
+<tr>
+<td>{DIAG=.}</td>
+<td>&lt;RMIN&gt; &lt;/RMIN&gt;</td>
+<td>relación con el texto que le sigue</td>
+</tr>
+<tr>
+<td>{=DIAG=.}</td>
+<td>&lt;CMIN&gt; &lt;/CMIN&gt;</td>
+<td>relación con el texto que le rodea</td>
+</tr>
+<tr>
+<td>{GL. }</td>
+<td>&lt;GL&gt; &lt;/GL&gt;</td>
+<td>glosa, explicación de un término o pasaje en el texto</td>
+</tr>
+<tr>
+<td>{AD. }</td>
+<td>&lt;AD&gt; &lt;/AD&gt;</td>
+<td>adición, expansión de los copistas del contenido del texto original, agregado después de que se completó el original</td>
+</tr>
+<tr>
+<td>{SYMB.}</td>
+<td>&lt;SYMB&gt; &lt;/SYMB&gt;</td>
+<td>símbolo que no se puede transcribir directamente</td>
+</tr>
+<tr>
+<td>{BLNK.}</td>
+<td>&lt;BLNK&gt; &lt;/BLNK&gt;</td>
+<td>espacio en blanco, área destinada a texto se dejó en blanco en un manuscrito</td>
+</tr>
+<tr>
+<td>{RMK: .}</td>
+<td>&lt;RMK&gt; &lt;/RMK&gt;</td>
+<td>breve comentario editorial sobre una característica física o textual: <code>{RMK: folio has been cut.}</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Etiquetas editoriales</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>HSMS</th>
+<th>XML</th>
+<th>significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ ]</td>
+<td>&lt;EDITADD&gt; &lt;/EDITADD&gt;</td>
+<td>inserción editorial: <code>enel ascen[den]te</code></td>
+</tr>
+<tr>
+<td>&lt; &gt;</td>
+<td>&lt;ABB&gt; &lt;/ABB&gt;</td>
+<td>expansión de la abreviatura de los copistas: <code>q&lt;ue&gt;</code>, <code>cap&lt;itu&gt;lo</code>, <code>u&lt;er&gt;dad</code></td>
+</tr>
+<tr>
+<td>&lt;&lt; &gt;&gt;</td>
+<td>&lt;SUP&gt; &lt;/SUP&gt;</td>
+<td>encierra los caracteres volados parte de una abreviatura: <code>q&lt;u&gt;&lt;&lt;i&gt;&gt;en</code>, <code>q&lt;u&gt;&lt;&lt;a&gt;&gt;les</code></td>
+</tr>
+<tr>
+<td>( )</td>
+<td>&lt;EDITDEL&gt; &lt;/EDITDEL&gt;</td>
+<td>supresión editorial: <code>pugnicion de (de) dios</code></td>
+</tr>
+<tr>
+<td>[^ ]</td>
+<td>&lt;COPADD&gt; &lt;/COPADD&gt;</td>
+<td>inserción del copista: <code>&amp; [^a]matala en</code>, <code>otra [^ma]nera</code></td>
+</tr>
+<tr>
+<td>[^#2 ]</td>
+<td>&lt;COPADD2&gt; &lt;/COPADD2&gt;</td>
+<td>inserción en una mano no original: <code>en la [^2#segu&lt;n&gt;d&lt;a&gt;] casa</code></td>
+</tr>
+<tr>
+<td>(^ )</td>
+<td>&lt;COPDEL&gt; &lt;/COPDEL&gt;</td>
+<td>supresión del copista: <code>uini(^ni)eron</code>, <code>ymagen(^es)</code></td>
+</tr>
+<tr>
+<td>(^#2 )</td>
+<td>&lt;COPDEL2&gt; &lt;/COPDEL2&gt;</td>
+<td>supresión en una mano no original: <code>los cauall(^2#eros)[^2#os]</code></td>
+</tr>
+</tbody>
+</table>
+<h3>Etiquetas de lengua</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>HSMS</th>
+<th>XML</th>
+<th>significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>{ARB.}</td>
+<td>&lt;ARB&gt; &lt;/ARB&gt;</td>
+<td>árabe</td>
+</tr>
+<tr>
+<td>{ARG.}</td>
+<td>&lt;ARG&gt; &lt;/ARG&gt;</td>
+<td>aragonés (no se utiliza para textos escritos en aragonés)</td>
+</tr>
+<tr>
+<td>{ARM.}</td>
+<td>&lt;ARM&gt; &lt;/ARM&gt;</td>
+<td>arameo</td>
+</tr>
+<tr>
+<td>{BAS.}</td>
+<td>&lt;BAS&gt; &lt;/BAS&gt;</td>
+<td>vasco</td>
+</tr>
+<tr>
+<td>{CAT.}</td>
+<td>&lt;CAT&gt; &lt;/CAT&gt;</td>
+<td>catalán</td>
+</tr>
+<tr>
+<td>{ENG.}</td>
+<td>&lt;ENG&gt; &lt;/ENG&gt;</td>
+<td>inglés</td>
+</tr>
+<tr>
+<td>{FRN.}</td>
+<td>&lt;FRN&gt; &lt;/FRN&gt;</td>
+<td>francés</td>
+</tr>
+<tr>
+<td>{GAL.}</td>
+<td>&lt;GAL&gt; &lt;/GAL&gt;</td>
+<td>gallego</td>
+</tr>
+<tr>
+<td>{GER.}</td>
+<td>&lt;GER&gt; &lt;/GER&gt;</td>
+<td>alemán</td>
+</tr>
+<tr>
+<td>{GRK.}</td>
+<td>&lt;GRK&gt; &lt;/GRK&gt;</td>
+<td>griego</td>
+</tr>
+<tr>
+<td>{HEB.}</td>
+<td>&lt;HEB&gt; &lt;/HEB&gt;</td>
+<td>hebreo</td>
+</tr>
+<tr>
+<td>{ITL.}</td>
+<td>&lt;ITL&gt; &lt;/ITL&gt;</td>
+<td>italiano</td>
+</tr>
+<tr>
+<td>{LAM.}</td>
+<td>&lt;LAM&gt; &lt;/LAM&gt;</td>
+<td>lenguas americanas</td>
+</tr>
+<tr>
+<td>{LAT.}</td>
+<td>&lt;LAT&gt; &lt;/LAT&gt;</td>
+<td>latín</td>
+</tr>
+<tr>
+<td>{PRT.}</td>
+<td>&lt;PRT&gt; &lt;/PRT&gt;</td>
+<td>portugués</td>
+</tr>
+</tbody>
+</table>
+<h3>Caracteres especiales</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>HSMS</th>
+<th>Unicode</th>
+<th>significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>\</td>
+<td>precede a la antigua notación en folio incluida en el encabezado: <code>{HD. Prologo. \ 3}</code></td>
+</tr>
+<tr>
+<td>*</td>
+<td>*</td>
+<td>marca la reconstrucción de texto ilegible: <code>[*d]esde cabo</code></td>
+</tr>
+<tr>
+<td>$</td>
+<td>$</td>
+<td>indica que el carácter (tipo) que le sigue se ha eliminado editorialmente porque aparece invertido en el texto: <code>($h)[h]onrra perdida</code></td>
+</tr>
+<tr>
+<td>[??]</td>
+<td>??</td>
+<td>denota la presencia en el manuscrito de <em>parte de una palabra</em> que es ilegible: <code>fueron a po[??] &amp;</code></td>
+</tr>
+<tr>
+<td>[??]</td>
+<td>??</td>
+<td>rodeado por un solo espacio denota que una <em>palabra completa</em> es ilegible: <code>estrellas [??]</code></td>
+</tr>
+<tr>
+<td>[???]</td>
+<td>???</td>
+<td>denota la ilegibilidad de una <em>frase</em>, la combinación de dos o más palabras ilegibles completas: <code>[?? ???] quisieres obrar conestas estrellas [??]</code></td>
+</tr>
+<tr>
+<td>|</td>
+<td>|</td>
+<td>denota divisiones físicas que separan segmentos de texto (en un diagrama, etc.)</td>
+</tr>
+<tr>
+<td>[+]</td>
+<td></td>
+<td>se utiliza para vincular un prefijo a su base léxica cuando se escriben por separado en el texto: <code>en[+]comjenda</code></td>
+</tr>
+<tr>
+<td>+</td>
+<td>+</td>
+<td>se utiliza cuando se interrumpe el flujo de lectura lógica del texto contenido en una etiqueta</td>
+</tr>
+<tr>
+<td>(( ))</td>
+<td>≺ ≻</td>
+<td>paréntesis dobles, representan los paréntesis que aparecen en el texto: <code>E ((lo q&lt;ue&gt; es peior)) muy aparejado a dar</code></td>
+</tr>
+<tr>
+<td>%</td>
+<td>¶</td>
+<td>calderón, utilizado para indicar divisiones de texto</td>
+</tr>
+<tr>
+<td>%2</td>
+<td>⇑</td>
+<td>calderón dos, el texto que le sigue hasta el final de la línea constituye la parte final de la línea anterior</td>
+</tr>
+<tr>
+<td>%3</td>
+<td>⇓</td>
+<td>calderón tres, el texto que le sigue hasta el final de la línea constituye la parte final de la línea siguiente</td>
+</tr>
+</tbody>
+</table>
+<h3>Letras</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>HSMS</th>
+<th>Unicode</th>
+<th>significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>c'</td>
+<td>ç</td>
+<td></td>
+</tr>
+<tr>
+<td>n~</td>
+<td>ñ</td>
+<td></td>
+</tr>
+<tr>
+<td>h~</td>
+<td>ħ</td>
+<td></td>
+</tr>
+<tr>
+<td>t'</td>
+<td>ţ</td>
+<td></td>
+</tr>
+<tr>
+<td>x~</td>
+<td>ẍ</td>
+<td></td>
+</tr>
+<tr>
+<td>s'</td>
+<td>σ</td>
+<td></td>
+</tr>
+<tr>
+<td>S'</td>
+<td>Σ</td>
+<td></td>
+</tr>
+<tr>
+<td>z'</td>
+<td>ϛ</td>
+<td></td>
+</tr>
+<tr>
+<td>Z'</td>
+<td>Ϛ</td>
+<td></td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>&amp;</td>
+<td>nota tironiana</td>
+</tr>
+<tr>
+<td>&amp;'</td>
+<td>⅋</td>
+<td>nota tironiana mayúscula</td>
+</tr>
+<tr>
+<td>a@'<br>e@'<br>i@'<br>o@'<br>u@'<br></td>
+<td>á<br>é<br>í<br>ó<br>ú<br></td>
+<td>indica la presencia de un acento agudo</td>
+</tr>
+<tr>
+<td>a@`<br>e@`<br>i@`<br>o@`<br>u@`<br></td>
+<td>à<br>è<br>ì<br>ò<br>ù<br></td>
+<td>indica la presencia de un acento grave</td>
+</tr>
+<tr>
+<td>a@^<br>e@^<br>i@^<br>o@^<br>u@^<br></td>
+<td>â<br>ê<br>î<br>ô<br>û<br></td>
+<td>indica la presencia de un acento circumflejo</td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

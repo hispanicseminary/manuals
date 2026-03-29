@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Analizador Corpus OSTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li class="active">
+              <a href="analizador.html"><span class="fa fa-file-text-o mr-3"></span> el analizador</a>
+          </li>
+          <li>
+            <a href="instalwin.html"><span class="fa fa-cog mr-3"></span> instalación Windows <span class="fa fa-windows mr-3"></span></a>
+          </li>
+          <li>
+            <a href="instalmac.html"><span class="fa fa-cog mr-3"></span> instalación Apple <span class="fa fa-apple mr-3"></a>
+          </li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-file-text-o mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="lematizado.html"><span class="fa fa-file-text-o mr-3"></span> lematizador</a>
+          </li>
+          <li>
+            <a href="corrector.html"><span class="fa fa-file-text-o mr-3"></span> corrector</a>
+          </li>
+          <li>
+            <a href="editor.html"><span class="fa fa-file-text-o mr-3"></span> editor</a>
+          </li>
+          <li>
+            <a href="problemas.html"><span class="fa fa-file-text-o mr-3"></span> problemas conocidos</a>
+          </li>
+          <li>
+            <a href="etiquetas.html"><span class="fa fa-tags mr-3"></span> etiquetas HSMS</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>¿Qué es el <em>Analizador Corpus OSTA</em>?</h2>
+<p>El <em>Analizador Corpus OSTA</em> es una herramienta de análisis textual desarrollada por F. Javier Pueyo Mena para el procesamiento de las transcripciones paleográficas utilizadas en la elaboración del <a href="http://osta.oldspanishtextualarchive.org/"><em>Old Spanish Textual Archive</em></a>.</p>
+<p><img src="images/01-analizador.jpg" alt="figura 1: flujo de trabajo del analizador" /></p>
+<p>El <em>Analizador Corpus OSTA</em> integra las librerías de <a href="https://nlp.lsi.upc.edu/freeling/node/1"><em>FreeLing</em></a> (Carreras, Chao et al. <a href="http://nlp.lsi.upc.edu/publications/papers/carreras04.pdf">2004</a>; Padró <a href="http://nlp.lsi.upc.edu/publications/papers/padro11.pdf">2011</a>, <a href="http://nlp.lsi.upc.edu/publications/papers/padro12.pdf">2012</a>) y las combina con una serie de rutinas para que, a partir del texto plano de las <a href="https://github.com/hispanicseminary/OSTA/tree/main/transcriptions">transcripciones paleográficas del HSMS</a>, sea posible obtener un texto en formato XML con toda la información lingüística incorporada, manteniendo también todas las características estructurales de la obra para facilitar su lectura y su posterior presentación en los resultados de las consultas.</p>
+<p><img src="images/02-freeling.jpg" alt="figura 2: componentes de FreeLing" /></p>
+<p>Sánchez Marco (<a href="https://aclanthology.org/L10-1368/">2010</a>, <a href="https://nlp.lsi.upc.edu/papers/sanchezmarco11.pdf">2011</a>, <a href="https://repositori.upf.edu/items/b01d1597-8d27-4cf2-bfbf-ac79a6951f8f?locale=en">2012</a>) realizó una primera adaptación de <em>FreeLing</em> al español medieval, utilizando parte de las transcripciones semi-paleográficas del HSMS para conformar su <em>golden corpus</em>, entrenar el programa, y crear y modificar los recursos y las reglas en los ámbitos arriba señalados. A lo largo de los años los colaboradores del HSMS han seguido mejorando y ampliando considerablemente los recursos lingüísticos de <em>FreeLing</em>, en particular el diccionario, que ahora solo contiene formas medievales (más de 275.000), y las reglas de afijación, cuya sección de análisis de clíticos ha sido expandida.</p>      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

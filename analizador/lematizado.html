@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Analizador Corpus OSTA</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>Filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> Inicio</a>
+          </li>
+          <li>
+              <a href="analizador.html"><span class="fa fa-file-text-o mr-3"></span> el analizador</a>
+          </li>
+          <li>
+            <a href="instalwin.html"><span class="fa fa-cog mr-3"></span> instalación Windows <span class="fa fa-windows mr-3"></span></a>
+          </li>
+          <li>
+            <a href="instalmac.html"><span class="fa fa-cog mr-3"></span> instalación Apple <span class="fa fa-apple mr-3"></a>
+          </li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-file-text-o mr-3"></span> interfaz</a>
+          </li>
+          <li class="active">
+            <a href="lematizado.html"><span class="fa fa-file-text-o mr-3"></span> lematizador</a>
+          </li>
+          <li>
+            <a href="corrector.html"><span class="fa fa-file-text-o mr-3"></span> corrector</a>
+          </li>
+          <li>
+            <a href="editor.html"><span class="fa fa-file-text-o mr-3"></span> editor</a>
+          </li>
+          <li>
+            <a href="problemas.html"><span class="fa fa-file-text-o mr-3"></span> problemas conocidos</a>
+          </li>
+          <li>
+            <a href="etiquetas.html"><span class="fa fa-tags mr-3"></span> etiquetas HSMS</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Lematizado y etiquetado morfológico</h2>
+<p>La funcionalidad principal del <em>Analizador Corpus OSTA</em> es la lematización y etiquetado morfológico de las transcripciones paleográficas. El procesado de cada transcripción genera en la misma carpeta donde se encuentra el texto analizado tres ficheros con estructura XML y extensión <code>.html</code> en formato UTF-8, visibles en un navegador web. En el <strong>Apéndice B</strong> se detallan las etiquetas utilizadas en estos ficheros.</p>
+<ul>
+<li><code>TEXT.SIGLA.html</code>:  se resuelven abreviaturas, añadidos y supresiones; se mantiene la disposición del texto en el códice (foliación, columnas, cabeceras, signaturas y reclamos); el texto no ofrece ningún tipo de lematización o etiquetado morfológico.</li>
+</ul>
+<p><img src="images/08-siglahtml.jpg" alt="figura 8" /></p>
+<ul>
+<li><code>TEXT.SIGLA.tagged.html</code>: se resuelven abreviaturas, añadidos y supresiones; se mantiene la disposición del texto en el códice (foliación, columnas, cabeceras, signaturas y reclamos); el texto incluye lematización y etiquetado morfológico (visible al pasar el cursor por encima de una palabra); se marcan en rojo las palabras que no aparecen definidas en el diccionario, y en azul las formas analizadas como verbo+clítico.</li>
+</ul>
+<p><img src="images/09-siglatagged.jpg" alt="figura 9" /></p>
+<ul>
+<li><code>TEXT.SIGLA.vrt.html</code>: se resuelven abreviaturas, añadidos y supresiones; se mantiene la disposición del texto en el códice (foliación, columnas, cabeceras, signaturas y reclamos); el texto incluye lematización y etiquetado morfológico (visible al pasar el cursor por encima de una palabra) y se añade el número de línea.</li>
+</ul>
+<p><img src="images/10-siglavrt.jpg" alt="figura 10" /></p>
+<p>En los ficheros <code>TEXT.SIGLA.vrt.html</code> cada línea del original se identifica con la etiqueta <code>\&lt;LN id='1'\&gt;\&lt;LNC\&gt;1\&lt;/LNC\&gt;\&lt;/LN\&gt;</code> y cada una de las palabras en una línea del original aparece etiquetada con <code>\&lt;w data1='dy•decir•VMM02S0'\&gt;dy\&lt;/w\&gt;</code>, siendo el símbolo • el utilizado para separar los tres componentes del lematizado y análisis morfológico:</p>
+<blockquote>
+<p>&lt;FOL&gt;<br>
+&lt;folio&gt;27r</folio><br>
+&lt;HD&gt; &lt;w data1='•PUNCT•PUNCT'&gt;&lt;/w&gt;<br>
+&lt;w data1='xxviij•28•Z'&gt;xxviij</w><br>
+&lt;/HD&gt;<br>
+&lt;CB1&gt;<br>
+&lt;CB&gt;<br>
+&lt;LN id='1'&gt;<LNC>1</LNC></LN><br>
+&lt;w data1='¶•¶•Fz'&gt;¶</w><br>
+&lt;w data1='dy•decir•VMM02S0'&gt;dy</w><br>
+&lt;w data1='non•no•RN'&gt;non</w><br>
+&lt;w data1='temes•temer•VMIP2S0'&gt;temes</w><br>
+&lt;w data1='los•el•DA0MP0'&gt;los</w><br>
+&lt;w data1='bramjdos•bramido•NCMP000'&gt;bramjdos</w><br>
+&lt;BR&gt;</p>
+</blockquote>
+<p>El formato de estos ficheros permite su posterior manipulación y procesado con otras herramientas, véase como ejemplo la sección 17 de <a href="https://aic.uva.es/cuentapalabras/linguistica-de-corpus-ii.html#ling%C3%BC%C3%ADstica-de-corpus-ii"><em>Cuentapalabras</em></a> (Fradejas Rueda 2025).</p>
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
