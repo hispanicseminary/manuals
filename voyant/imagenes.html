@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Voyant Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
+          </li>
+          <li>
+              <a href="lectura.html"><span class="fa fa-book mr-3"></span> lectura distante</a>
+          </li>
+          <li>
+            <a href="instalacion.html"><span class="fa fa-cog mr-3"></span> instalación</a>
+          </li>
+		  <li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="herramientas.html"><span class="fa fa-wrench mr-3"></span> herramientas</a>
+          </li>
+          <li>
+            <a href="codigo.html"><span class="fa fa-code mr-3"></span> exportar código</a>
+          </li>
+          <li class="active">
+            <a href="imagenes.html"><span class="fa fa-file-image-o mr-3"></span> exportar imágenes</a>
+          </li>
+          <li>
+            <a href="recursos.html"><span class="fa fa-file-text-o mr-3"></span> otros recursos</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+<h2>Cómo exportar imágenes desde <em>Voyant Tools</em></h2>
+<p>Si se desea exportar una imagen de <em>Voyant Tools</em>, hay que seleccionar <code>exportar esta visualización en PNG</code> en “Exportar visualización”.</p>
+<img data-align="center" alt="" title="" src="images/image060.png"><br>
+<p>“Exportar visualización”, disponible en alguna de las herramientas, genera una imagen en formato PNG de la herramienta actual y un fragmento de código HTML que contiene la imagen. Una vez seleccionada esta opción, es posible cambiar la escala de la imagen usando la barra deslizante de escala, que aumentará o disminuirá el tamaño de la imagen.</p>
+<p>Vamos ahora a exportar el gráfico en la herramienta <strong>Tendencias</strong> mostrando la distribución de las palabras “a”, “no”, “le”, “más”, y “me”, en el corpus de novelas. Para ello debemos introducir esas palabras en el cuadro de búsqueda y a continuación hacemos clic en el icono Exportar y seleccionamos <code>Exportar esta visualización en PNG</code>. Debería aparecer una ventana emergente con una miniatura de la imagen (podemos abrirla en otra ventana del navegador) y un fragmento de código HTML que podemos utilizar para insertar la imagen de la herramienta y el corpus seleccionados en otro sitio web.</p>
+<img data-align="center" alt="" title="" src="images/image063.png"><br>
+<img data-align="center" alt="" title="" src="images/image064.png"><br>
+<p>Desafortunadamente la leyenda con los términos consultados no aparece incluida en la imagen. Tenemos entonces la opción de exportar los datos actuales en formato TSV para su posterior procesado en Excel o programas similares.</p>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

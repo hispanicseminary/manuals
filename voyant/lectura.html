@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Voyant Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
+          </li>
+          <li class="active">
+              <a href="lectura.html"><span class="fa fa-book mr-3"></span> lectura distante</a>
+          </li>
+          <li>
+            <a href="instalacion.html"><span class="fa fa-cog mr-3"></span> instalación</a>
+          </li>
+		  <li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="herramientas.html"><span class="fa fa-wrench mr-3"></span> herramientas</a>
+          </li>
+          <li>
+            <a href="codigo.html"><span class="fa fa-code mr-3"></span> exportar código</a>
+          </li>
+          <li>
+            <a href="imagenes.html"><span class="fa fa-file-image-o mr-3"></span> exportar imágenes</a>
+          </li>
+          <li>
+            <a href="recursos.html"><span class="fa fa-file-text-o mr-3"></span> otros recursos</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+<h2>Herramientas para la lectura distante</h2>
+<p>La <strong>lectura distante</strong> (<em>distant reading</em> en inglés), término popularizado por Moretti (2005), es un enfoque de análisis literario que, en lugar de centrarse en la interpretación profunda y detallada de un único texto (lo que se conoce como lectura cercana o <em>close reading</em>), utiliza métodos computacionales para analizar enormes cantidades de textos de forma simultánea. El objetivo no es entender una obra en su particularidad, sino identificar patrones, tendencias, estructuras y anomalías a gran escala a lo largo de un vasto corpus textual.</p>
+<p>Podemos comparar la <em>lectura cercana</em> con un examen en detalle de un árbol (sus hojas, su corteza, la forma de sus ramas, etc.), mientras que, por el contrario, <em>lectura distante</em> es equivalente a observar todo el bosque desde una montaña: no se ven los detalles de cada árbol, pero se aprecian la forma del bosque, las áreas más densas, los claros, los tipos de árboles que predominan y cómo cambia el paisaje en su conjunto.</p>
+<p>La lectura distante no es una única técnica, sino una serie de diversas metodologías computacionales aplicadas a un corpus textual, una colección grande y estructurada de textos en formato digital, preparada para su análisis. El proceso generalmente sigue estos pasos:</p>
+<h3>Creación y Curación del Corpus:</h3>
+<ul>
+<li>recopilación de los textos, por ejemplo, todas las novelas publicadas en España en el siglo XIX, transcripciones de debates parlamentarios, artículos de un periódico durante 50 años, etc. Estos textos pueden encontrarse en lugares como <a href="https://books.google.com/" target="_blank">Google Books</a>, <a href="https://www.gutenberg.org/" target="_blank">Project Gutenberg</a>, <a href="https://www.hathitrust.org/" target="_blank">HathiTrust</a>, o la <a href="https://www.cervantesvirtual.com/" target="_blank">Biblioteca Virtual Miguel de Cervantes</a>, o archivos periodísticos digitalizados.</li>
+<li>los textos deben ser limpiados y estandarizados (por ejemplo, corrigiendo errores de digitalización OCR, eliminando texto irrelevante, unificando formatos). A cada texto se le asocian metadatos como el autor, año de publicación, género, etc.</li>
+</ul>
+<h3>Análisis Computacional</h3>
+<p>Una vez que el corpus está listo, se aplican diversas técnicas cuantitativas para extraer información. Las más comunes son:</p>
+<ul>
+<li><strong>Análisis de Frecuencias (N-gramas)</strong>: Consiste en contar la frecuencia de palabras (unigramas), pares de palabras (bigramas) o secuencias de N palabras (N-gramas). Este tipo de análisis permite identificar las palabras y conceptos clave de un corpus. Por ejemplo, al analizar novelas victorianas, podríamos ver un aumento del uso de palabras como “industria”, “máquina” o “progreso” a lo largo de las décadas, reflejando la Revolución Industrial.</li>
+<li><strong>Modelado de Tópicos (<em>Topic Modeling</em>)</strong>: Es una técnica estadística (el algoritmo más conocido es el LDA, Latent Dirichlet Allocation) que identifica grupos de palabras que tienden a aparecer juntas en los textos. A cada uno de estos grupos se le asigna una etiqueta interpretativa: un “tópico” o “tema”. Este tipo de análisis permite descubrir la estructura temática latente de un corpus sin leer los textos. Por ejemplo, en un corpus de artículos científicos, podría identificar tópicos como “genética y ADN”, “inteligencia artificial y redes neuronales” o “cambio climático y emisiones de carbono”, y mostrar cómo la prominencia de cada tema ha cambiado con el tiempo.</li>
+<li><strong>Análisis de Sentimientos (<em>Sentiment Analysis</em>)</strong>: Es una técnica para clasificar textos o fragmentos de texto según su polaridad emocional: positiva, negativa o neutra. Con ella se puede rastrear la opinión pública sobre un tema a lo largo del tiempo en redes sociales o periódicos, o incluso para analizar el arco emocional de los personajes en miles de novelas y ver si existen patrones de género (por ejemplo, si las novelas de tragedia siguen una curva emocional similar).</li>
+<li><strong>Estilometría</strong>: Es el análisis cuantitativo del estilo de un autor. Se fija en rasgos como la longitud media de las frases, el uso de palabras funcionales (artículos, preposiciones), la riqueza del vocabulario, etc. Su uso más famoso es la atribución de autoría, es decir, la determinación de quién escribió un texto dubitado (del que no se conoce el autor) comparando su “huella estilística” con la de otros textos indubitados (de los que se conoce el autor); la estilometría también sirve para rastrear la evolución del estilo de un autor a lo largo de su carrera o la influencia de un autor sobre otro.</li>
+<li><strong>Reconocimiento de Entidades Nombradas (<em>NER - Named Entity Recognition</em>)</strong>: Es la identificación y clasificación automática de los nombres de personas, lugares, organizaciones, fechas, etc. Sirve para mapear redes sociales entre personajes de novelas, identificar los lugares geográficos más mencionados en un género literario específico, o rastrear la aparición de figuras históricas en la prensa.</li>
+</ul>
+<h3>Visualización e Interpretación</h3>
+<p>Los resultados cuantitativos extraídos (números, frecuencias, probabilidades) no son significativos por sí mismos. El paso final es traducirlos a visualizaciones comprensibles, como grafos, mapas y árboles:</p>
+<ul>
+<li><strong>Grafos</strong>: Para mostrar redes de relaciones (personajes, autores).</li>
+<li><strong>Mapas</strong>: Para visualizar datos geográficos (lugares mencionados en las novelas).</li>
+<li><strong>Árboles (o gráficos de líneas/barras)</strong>: Para mostrar tendencias a lo largo del tiempo (la popularidad de un género, la frecuencia de una palabra).</li>
+</ul>
+<h3>Interpretación</h3>
+<p>Finalmente, estos patrones visuales deben ser interpretados por el investigador. La lectura distante no reemplaza la interpretación, sino que la redirige: en lugar de interpretar el significado de una metáfora, se interpreta el significado de una curva ascendente en un gráfico.</p>
+<p>A pesar de todas estas posibilidades de análisis, la lectura distante no está exenta de críticas. Al tratar el texto como datos es posible perder ciertos matices como la ironía, la ambigüedad, la metáfora y la riqueza estética del lenguaje. Sin su contexto profundo, una palabra es solo una palabra. De forma adicional, los resultados dependen totalmente de la calidad del corpus. Un corpus sesgado (por ejemplo, que solo incluya obras de autores masculinos) o con muchos errores de digitalización producirá conclusiones erróneas. Finalmente, en muchas ocasiones, los modelos computacionales (como el <em>topic modeling</em>) son complejos y no es del todo transparente por qué agrupan ciertas palabras, lo que puede dificultar la interpretación.</p>
+<p>Por todo ello, la lectura distante no debe reemplazar a la lectura cercana, sino complementarla. La lectura distante puede revelar patrones a gran escala que luego pueden ser investigados en profundidad mediante la lectura cercana de textos específicos que resulten ser representativos o anómalos.</p>
+<p>Esta guía proporciona una introducción a Voyant Tools, una aplicación de código abierto para realizar minería de texto y datos. Desarrollada por Stéfan Sinclair<sup>†</sup> de McGill University y Geoffrey Rockwell de University of Alberta, Voyant Tools fue creada para apoyar la lectura e interpretación de textos.
+Creada pensando en los estudiosos de las humanidades digitales, Voyant Tools proporciona listas de frecuencia de palabras, gráficos de distribución de frecuencia y análisis KWIC (Key Word in Context).</p>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Voyant Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
+          </li>
+          <li>
+              <a href="lectura.html"><span class="fa fa-book mr-3"></span> lectura distante</a>
+          </li>
+          <li>
+            <a href="instalacion.html"><span class="fa fa-cog mr-3"></span> instalación</a>
+          </li>
+		  <li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
+          </li>
+          <li class="active">
+            <a href="herramientas.html"><span class="fa fa-wrench mr-3"></span> herramientas</a>
+          </li>
+          <li>
+            <a href="codigo.html"><span class="fa fa-code mr-3"></span> exportar código</a>
+          </li>
+          <li>
+            <a href="imagenes.html"><span class="fa fa-file-image-o mr-3"></span> exportar imágenes</a>
+          </li>
+          <li>
+            <a href="recursos.html"><span class="fa fa-file-text-o mr-3"></span> otros recursos</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2> Herramientas</h2>
+<h3>Nubes de palabras y palabras vacías</h3>
+<p>La herramienta <strong>Cirrus</strong> muestra una nube de palabras en la que aparecen las palabras más frecuentes en el corpus de novelas, siendo las que aparecen con mayor tamaño las palabras más comunes.</p>
+<img data-align="center" alt="" title="" src="images/image016.png"><br>
+<p>La herramienta <strong>Cirrus</strong> tiene un control deslizante cerca de la parte inferior (con la etiqueta <code>Término</code>) que permite ajustar el número de palabras que se muestran. De forma predeterminada, el valor mínimo es 25 y el valor máximo es 500, y el control deslizante se ajusta en incrementos de 25.</p>
+<p>En la barra gris en la parte superior de la herramienta <strong>Cirrus</strong> encontramos también las herramientas <strong>Términos</strong> y <strong>Enlaces</strong>. La primera de ellas, <strong>Términos</strong>, es una tabla que muestra tres columnas de forma predeterminada:</p>
+<ul>
+<li><strong>Términos</strong>: es la palabra en sí</li>
+<li><strong>Contar</strong>: es la frecuencia absoluta de cada término, corresponde al número de veces aparece en el corpus.</li>
+<li><strong>Tendencia</strong>: es un gráfico que muestra la distribución del término en los segmentos del corpus; puedes pasar el ratón por encima del gráfico para ver resultados más precisos.</li>
+</ul>
+<p>Es posible gestionar las columnas pasando el ratón por encima de la barra de título de una columna y abriendo el menú desplegable, marcando allí las columnas que deseamos ver y las que no.
+En esta herramienta hay otras dos columnas que pueden resultar de interés: <strong>Relativo</strong> y <strong>Oblicuidad</strong></p>
+<ul>
+<li><p><strong>Relativo</strong>: es la frecuencia relativa de cada término.</p>
+<blockquote>
+<p>Las <strong><em>frecuencias absolutas</em></strong> son poco informativas. En un corpus de seis palabras, tres de ellas representarían el 50% del total, mientras que esas mismas tres palabras en un corpus de 6,000 representarían el 0.1% del total. Para evitar la sobrerrepresentación de un término, los lingüistas utilizan la <strong><em>frecuencia relativa normalizada</em></strong> o <strong><em>frecuencia relativa</em></strong>, calculada dividiendo la frecuencia absoluta por el número total de términos del documento. Así, en el ejemplo anterior, las frecuencias relativas serían 0.5% y 0.0005% respectivamente. Esto es especialmente útil al comparar las frecuencias relativas en corpus o documentos diferentes.</p>
+</blockquote>
+</li>
+</ul>
+<img data-align="center" alt="frecuencia absoluta" title="" src="images/image017.png"><br>
+<img data-align="center" alt="frecuencia relativa" title="" src="images/image018.png"><br>
+<ul>
+<li><p><strong>Oblicuidad</strong>: es la medida estadística de la simetría de las frecuencias relativas de un término en el corpus, indicando la distribución de un término.</p>
+<blockquote>
+<p>La simetría estadística se calcula observando las desviaciones de una frecuencia con respecto a la media. Cuanto <strong>más cercano a cero</strong> sea el grado de la asimetría estadística, más regular es la distribución de ese término (es decir que ocurre con una media muy similar en todos los documentos). Un <strong>valor positivo</strong> significa que el término está por debajo de la media, y cuanto más grande sea, más asimétrico es el término, es decir, que ocurre muchísimo en un documento pero que casi no ocurre en el corpus. Por el contrario, un <strong>valor negativo</strong> indica que el término está por encima de la media, y cuanto más grande sea, menos asimétrico es el término, es decir, que ocurre muchísimo en el corpus.</p>
+</blockquote>
+</li>
+</ul>
+<p>También se pueden ver las palabras más frecuentes enumeradas en la herramienta <strong>Sumario</strong>, con el número de veces que se menciona la palabra en todo el corpus de las Novelas del siglo XIX.</p>
+<img data-align="center" alt="" title="" src="images/image019.png"><br>
+<p>En la barra gris en la parte superior de la herramienta <strong>Sumario</strong> encontramos también las herramientas <strong>Documentos</strong> y <strong>Frases</strong>. La primera de ellas, <strong>Documentos</strong>, es una tabla que muestra información sobre cada uno de los documentos que conforman el corpus.</p>
+<img data-align="center" alt="" title="" src="images/image020.png"><br>
+<p>La herramienta <strong>Documentos</strong> muestra cuatro columnas de forma predeterminada:</p>
+<ul>
+<li><strong>Título</strong>: el título del documento (o el nombre del archivo si no se ha encontrado un título mejor).</li>
+<li><strong>Palabras</strong>: el número de palabras individuales (tokens) encontradas en el documento (por ejemplo, se cuenta cada aparición de "madre")</li>
+<li><strong>Tipos</strong>: número de formas de palabras encontradas en el documento (por ejemplo, todas las apariciones de "madre" se cuentan como una forma de palabra).</li>
+<li><strong>Proporción</strong>: relación entre los tipos y las palabras individuales (tokens), expresada en porcentaje. Un número más alto suele significar una mayor diversidad de vocabulario.</li>
+<li><strong>Palabras/frase</strong>: una aproximación del número medio de palabras por frase (recuento de palabras/frases); la forma en que se calculan las frases debe considerarse muy aproximada, especialmente debido a las complicaciones con las abreviaturas y otros usos de la puntuación (el análisis sintáctico de las frases lo realiza la clase BreakIterator de Java, y también depende de la detección precisa del idioma).</li>
+</ul>
+<p>La herramienta <strong>Frases</strong>, por su parte, muestra secuencias repetidas de palabras organizadas por frecuencia de repetición o número de palabras en cada frase repetida. Por defecto, las frases se muestran en orden descendente de longitud de frase.</p>
+<img data-align="center" alt="" title="" src="images/image021.png"><br>
+<p>La herramienta <strong>Frases</strong> muestra cuatro columnas de forma predeterminada:</p>
+<ul>
+<li><strong>Término</strong>: la frase que se repite.</li>
+<li><strong>Contar</strong>: el número de veces que la frase aparece en el documento, es decir su frecuencia absoluta.</li>
+<li><strong>Longitud</strong>: el número de palabras de la frase.</li>
+<li><strong>Tendencia</strong>: el gráfico que muestra la distribución de frecuencias relativas del término en el documento.</li>
+</ul>
+<p>La barra inferior de la herramienta <strong>Frases</strong> tiene una barra de búsqueda, y varias opciones adicionales.</p>
+<ul>
+<li><strong>Barra de búsqueda</strong>: permite buscar términos concretos y qué frases contienen dicho término, o buscar determinadas frases en conjunto.</li>
+<li><strong>Escala</strong>: el control deslizante señala los límites superior e inferior de la longitud de la frase.</li>
+<li><strong>Sobrepuesto</strong>: especifica cómo se muestran las frases que se solapan<ul>
+<li><em>ninguno (mantener todos)</em>: no hay ningún filtro, se muestran las frases que se solapan.</li>
+<li><em>priorizar las frases más largas</em>: sólo se conserva la frase más larga y todas las demás se filtran.</li>
+<li><em>priorizar las frases más frecuentes</em>: se muestan las frases que aparezcan con mayor frecuencia en todo el documento.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Palabras vacías</strong>
+<em>Voyant Tools</em> tiene una lista de palabras clave comunes que se han eliminado del corpus:</p>
+<blockquote>
+<p> <em>al, alguna, algunas, alguno, algunos, algún, ambos, ampleamos, ante, antes, aquel, aquellas, aquellos, aqui, arriba, atras, bajo, bastante, bien, cada, cierta, ciertas, ciertos, como, con, conseguimos, conseguir, consigo, consigue, consiguen, consigues, cual, cuando, de, del, dentro, donde, dos, el, ellas, ellos, empleais, emplean, emplear, empleas, empleo, en, encima, entonces, entre, era, eramos, eran, eras, eres, es, esta, estaba, estado, estais, estamos, estan, estoy, fin, fue, fueron, fui, fuimos, gueno, ha, hace, haceis, hacemos, hacen, hacer, haces, hago, incluso, intenta, intentais, intentamos, intentan, intentar, intentas, intento, ir, la, largo, las, lo, los, mientras, mio, modo, muchos, muy, nos, nosotros, o, otro, para, pero, podeis, podemos, poder, podria, podriais, podriamos, podrian, podrias, por, por qué, porque, primero desde, puede, pueden, puedo, que, quien, sabe, sabeis, sabemos, saben, saber, sabes, se, ser, si, siendo, sin, sobre, sois, solamente, solo, somos, soy, su, sus, también, teneis, tenemos, tener, tengo, tiempo, tiene, tienen, todo, trabaja, trabajais, trabajamos, trabajan, trabajar, trabajas, trabajo, tras, tuyo, ultimo, un, una, unas, uno, unos, usa, usais, usamos, usan, usar, usas, uso, va, vais, valor, vamos, van, vaya, verdad, verdadera cierto, verdadero, vosotras, vosotros, voy, y, yo</em></p>
+</blockquote>
+<p>Es posible eliminar palabras que no añaden mucho significado a nuestro análisis, para ello procedemos a filtrarlas. Por ejemplo, vamos a filtrar las palabras “había”, “más” y “no” de la nube de palabras. Para ello primero colocamos el cursor sobre la barra gris en la parte superior de la ventana de la nube de palabras hasta que aparezca un menú de iconos. Luego hacemos clic en el icono azul de opciones. En el menú desplegable Opciones podemos modificar la configuración de la herramienta. Estas son las opciones disponibles:</p>
+<img data-align="center" alt="" title="" src="images/image023.png"><br>
+<ul>
+<li><strong>Palabras excluidas</strong>: permite definir un conjunto de palabras vacías que van a ser excluidas; la <a href="https://voyant-tools.org/docs/#!/guide/stopwords" target="_blank">guía de palabras vacías</a> ofrece más información</li>
+<li><strong>Lista blanca</strong>: permite definir un conjunto de palabras permitidas (lo opuesto a una lista de palabras vacías), solo los términos de esta lista se mostrarán en <strong>Cirrus</strong> (hay que tener en cuenta que la lista de palabras vacías aún está activa, por lo que debemos elegir “Ninguna” en el menú de palabras vacías para desactivarla)</li>
+<li><strong>Categorías</strong>: permite especificar categorías en función de la frecuencia de las palabras.</li>
+<li><strong>Familia de fuentes</strong>: determina qué fuente utiliza <strong>Cirrus</strong>. Aquí también se puede especificar una fuente instalada en nuestro ordenador, pero, por supuesto, es posible que no esté disponible en otros ordenadores (en cuyo caso se usa una fuente predeterminada, segura para la web)</li>
+<li><strong>Paleta</strong>: permite editar la <a href="https://voyant-tools.org/docs/#!/guide/palette" target="_blank">paleta de colores</a>.</li>
+</ul>
+<p>Para filtrar las palabras excluidas, hay que hacer clic en el botón <code>Editar lista</code> a la derecha del menú desplegable <code>Palabras excluidas: Auto-Detección</code>.</p>
+<img data-align="center" alt="" title="" src="images/image024.png"><br>
+<p>En la ventana emergente de edición de la lista de palabras irrelevantes, debemos escribir <code>había</code>, <code>más</code> y <code>no</code> y cualquier otra palabra que deseemos filtrar y, a continuación, hacemos clic en <code>Salvar</code>.</p>
+<img data-align="center" alt="" title="" src="images/image025.png"><br>
+<p>Al regresar a la ventana emergente Opciones hay que hacer clic en <code>Confirmar</code>. La nube de palabras debería actualizarse automáticamente.</p>
+<img data-align="center" alt="" title="" src="images/image026.png"><br>
+<p>Las palabras solo se filtrarán en la herramienta <strong>Cirrus</strong>. Para que el resto de las herramientas de <em>Voyant Tools</em> se actualicen con la nueva lista de palabras vacías es necesario hacer clic en el botón <code>Reset</code> en la herramienta <strong>Tendencias</strong>.</p>
+<h3>Tendencias y frecuencia de las palabras</h3>
+<p>La herramienta <strong>Tendencias</strong> muestra un gráfico de líneas con las palabras más utilizadas en el corpus. Cada serie del gráfico está coloreada según la palabra que representa. En la parte superior del gráfico, una leyenda muestra qué palabras están asociadas con ciertos colores. Se puede hacer clic en las palabras de la leyenda para que se muestren o no. Al pasar el cursor sobre cualquier punto del gráfico, aparece un cuadro de llamada con información sobre el término seleccionado y su frecuencia.</p>
+<p>De forma predeterminada, la herramienta <strong>Tendencias</strong> muestra las frecuencias relativas de las palabras en el corpus. Para ver el recuento absoluto de cada documento del corpus, debemos seleccionar <code>Frecuencias sin pulir</code>, que podemos encontrar al hacer clic en el icono azul de opciones en la barra de menú gris.</p>
+<p>En la ventana emergente Opciones, hay que hacer clic en <code>Frecuencias sin pulir</code> y, a continuación, pulsar <code>Confirmar</code>. La herramienta Tendencias debería actualizarse automáticamente con el recuento absoluto de cada una de las palabras principales del corpus.</p>
+<img data-align="center" alt="" title="" src="images/image029.png"><br>
+<img data-align="center" alt="" title="" src="images/image030.png"><br>
+<p>En cualquier momento podemos hacer clic en el botón <code>Reset</code> para volver a los valores predeterminados de la herramienta. El botón <code>Display</code> tiene dos componentes, <code>Show labels</code> y <code>Modo de gráfico</code>.</p>
+<ul>
+<li>Mostrar etiquetas: determina si cada elemento del gráfico debe etiquetarse</li>
+<li>Modo de gráfico:<ul>
+<li><strong>Área</strong>: un gráfico de área (las etiquetas no están disponibles para este tipo de gráfico)</li>
+<li><strong>Barras</strong>: cada elemento es su propia columna para cada categoría</li>
+<li><strong>Línea</strong>: gráfico de líneas en todas las categorías</li>
+<li><strong>Barra apilada</strong>: gráfico de barras apiladas (los valores se muestran en columnas)</li>
+<li><strong>Línea y barra apilada</strong>: gráfico de líneas y barras apiladas superpuestas (el utilizado por defecto)</li>
+</ul>
+</li>
+</ul>
+<p>Para cambiar la visualización a barras debemos seleccionar el menú desplegable <code>Display</code> y, a continuación, hacer clic en <code>Columns</code>.</p>
+<img data-align="center" alt="" title="" src="images/image031.png"><br>
+<p>El gráfico debería actualizarse automáticamente con un gráfico de barras.</p>
+<img data-align="center" alt="" title="" src="images/image032.png"><br>
+<p>Para seleccionar una palabra en particular en <strong>Tendencias</strong>, hay que hacer clic en esa palabra en la herramienta <strong>Cirrus</strong>. La herramienta <strong>Tendencias</strong> se actualizará con la frecuencia de esa palabra seleccionada en el corpus.</p>
+<p>Por ejemplo, al hacer clic en la palabra “usted” en la nube de palabras de la herramienta <strong>Cirrus</strong> vemos cómo el gráfico de columnas de la herramienta <strong>Tendencias</strong> cambia para mostrar los nuevos resultados.</p>
+<img data-align="center" alt="" title="" src="images/image033.png"><br>
+<img data-align="center" alt="" title="" src="images/image034.png"><br>
+<p>En la barra gris de la herramienta <strong>Tendencias</strong> encontramos también la herramienta <strong>Términos del documento</strong>, y al hacer clic en ella se muestra la tabla de frecuencias de los términos en el documento con las siguientes columnas:</p>
+<img data-align="center" alt="" title="" src="images/image035.png"><br>
+<ul>
+<li><strong>#</strong>: es el número de documento</li>
+<li><strong>Términos</strong>: es la palabra en sí</li>
+<li><strong>Contar</strong>: es la frecuencia absoluta de cada término, corresponde al número de veces aparece en el documento.</li>
+<li><strong>Relativo</strong>: es la frecuencia relativa de cada término.</li>
+<li><strong>Tendencia</strong>: es un gráfico que muestra la distribución del término en los segmentos del documento; puedes pasar el ratón por encima del gráfico para ver resultados más precisos.</li>
+</ul>
+<p>Es posible gestionar las columnas pasando el ratón por encima de la barra de título de una columna y abriendo el menú desplegable, marcando allí las columnas que deseamos ver y las que no.</p>
+<h3>Búsquedas</h3>
+<p>Para ver un término en particular en el corpus, la herramienta <strong>Tendencias</strong> tiene un cuadro de búsqueda, donde se puede especificar una búsqueda avanzada, siendo posible buscar varias palabras al mismo tiempo.</p>
+<p>Busquemos las palabras “capitán” y “veneno” juntas y veamos con qué frecuencia aparecen en el corpus. Para ello hay que escribir las palabras “capitán” y “veneno” como palabras separadas y, a continuación, hacer clic en <code>Intro</code>. La herramienta <strong>Tendencias</strong> se actualiza con el número de veces que estas palabras aparecen en el corpus. Hay que tener en cuenta que <em>Voyant Tools</em> no distingue entre mayúsculas y minúsculas, aunque sí diferencia palabras con o sin tilde.</p>
+<img data-align="center" alt="" title="" src="images/image036.png"><br>
+<p>El cuadro de búsqueda de todas las herramientas permite realizar diferentes consultas avanzadas, siendo estos algunos ejemplos:</p>
+<ul>
+<li><code>árbol</code>: coincide con el término exacto “árbol”</li>
+<li><code>árb*</code>: hace coincidir todos los términos que comienzan con el prefijo “árb-” y luego un comodín como un solo término</li>
+<li><code>^árb*</code>: hace coincidir los términos que comienzan con “árb-” como términos separados (árbol, árboles, árbitro, árbole, etc.)</li>
+<li><code>*eron</code>: coincidir con los términos que terminan con el sufijo “-eron” como un solo término</li>
+<li><code>^*eron</code>: hace coincidir los términos que terminan con el sufijo “-eron” como términos separados (dieron, quisieron, oyeron, tuvieron, etc.)</li>
+<li><code>otra, manera</code>: empareja cada término separado por comas como términos separados</li>
+<li><code>otra|manera</code>: hace coincidir los términos separados por barras verticales como un solo término</li>
+<li><code>“otra manera”</code>: como una frase exacta que respeta el orden de las palabras</li>
+<li><code>“hombre pobre”~0</code>: empareja las combinaciones hombre pobre y pobre hombre como una frase en la que no importa el orden de las palabras, separadas por 0 palabras</li>
+<li>“<code>hombre pobre”~5</code>: Empareja a “hombre” cerca de “pobre”, en cualquier orden, separados por no más de 5 palabras</li>
+</ul>
+<p>También es posible utilizar <strong><code>[ ]</code></strong> indicando que cualquiera de los caracteres dentro de los corchetes puede aparecer como mucho una vez, así <em>guap[oa]s</em> sirve para encontrar las variantes ortográficas de guapas y guapos.</p>
+<h3>Palabras en contexto</h3>
+<p>Además del examen de las frecuencias de las palabras, <em>Voyant Tools</em> permite también examinar las palabras en su contexto.</p>
+<p>La herramienta <strong>Contextos</strong> (o Palabras clave en contexto) muestra cada aparición de una palabra clave con un poco de texto circundante (el contexto). La vista de tabla muestra las tres siguientes columnas:</p>
+<ul>
+<li>Documento: muestra el documento en el que aparece la palabra clave</li>
+<li>Izquierda: muestra las palabras contextuales a la izquierda de la palabra clave</li>
+<li>Término: muestra la palabra clave que coincide con la consulta</li>
+<li>Derecha: muestra las palabras contextuales a la derecha de la palabra clave</li>
+</ul>
+<p>De forma predeterminada, los contextos se muestran para las palabras más frecuentes del corpus. Para buscar una palabra diferente, es necesario especificar un término en el cuadro de búsqueda de la herramienta <strong>Contextos</strong>.</p>
+<p>Examinemos ahora la frecuencia de la palabra “árboles” en su contexto. Para ello escribimos “árboles” en el cuadro de búsqueda y hacemos clic en <code>Intro</code>. El término “árboles” aparecerá con las palabras que lo rodean (el contexto), organizadas por novela.</p>
+<img data-align="center" alt="" title="" src="images/image037.png"><br>
+<p>De forma predeterminada, se muestran todas las formas de la palabra en el corpus. Si solo se quieren ver los resultados de una solo novela, hay que hacer clic en el menú desplegable <code>Escala</code> y seleccionar <code>Documentos</code>. Esto generará una lista con los documentos en el corpus. A continuación, se debe marcar la novela que se desea ver en contexto.</p>
+<img data-align="center" alt="" title="" src="images/image038.png"><br>
+<p>También se puede aumentar el contexto que rodea a la palabra consultada, para ello hay que utilizar el control deslizante <code>Contexto</code>; el valor predeterminado es 5 y el máximo 50. Del mismo modo, el control deslizante Expandir determina cuántas palabras se muestran cuando se expande una fila determinada (haciendo clic en el icono <span class="fa fa-windows"></span> en la columna más a la izquierda); el valor predeterminado es 50, el mínimo es 5 y el máximo es 500 palabras.</p>
+<img data-align="center" alt="" title="" src="images/image039.png"><br>
+<p>Cuando seleccionamos una fila concreta en la herramienta <strong>Contextos</strong>, la herramienta <strong>Lector</strong> se actualizará con el término de búsqueda resaltado en amarillo, mostrando también dónde aparece esa fila de texto en el corpus.</p>
+<img data-align="center" alt="" title="" src="images/image040.png"><br>
+<img data-align="center" alt="" title="" src="images/image041.png"><br>
+<p>La herramienta <strong>Lector</strong> muestra todo el corpus y se compone de dos componentes visuales: el lector de texto y el visor. El lector de texto muestra todo el texto del corpus. Con el lector de texto es posible:</p>
+<ul>
+<li>Avanzar dentro del lector de texto para obtener más contenido</li>
+<li>Colocar el cursor sobre una palabra para mostrar su frecuencia en el documento</li>
+<li>Hacer clic en una palabra para buscarla en el <strong>Lector</strong> (y otras herramientas si corresponde)</li>
+</ul>
+<p>El <strong>visor</strong> muestra una descripción general de todo el corpus. Esto es especialmente útil cuando hay varios documentos en un corpus. Las barras representan cada documento en el orden en que aparecen en el corpus.</p>
+<img data-align="center" alt="" title="" src="images/image042.png"><br>
+<p>La longitud relativa del documento se representa horizontalmente (en otras palabras, cuanto más ancho se muestra un documento, más largo es) y la frecuencia relativa del término buscado se representa verticalmente mediante la línea quebrada. La barra vertical azul indica la posición actual del lector de texto en el corpus. Se puede hacer clic en cualquier lugar a lo largo del visor para saltar a otra ubicación. Para avanzar o retroceder en el texto, deben usarse las flechas junto al cuadro de búsqueda.</p>
+<h2>Otras herramientas</h2>
+<p>Además de las herramientas que aparecen de forma predeterminada en la interfaz de trabajo (<strong>Cirrus</strong>, <strong>Lector</strong>, <strong>Tendencias</strong>, <strong>Sumario</strong> y <strong>Contextos</strong>), es posible acceder a otra serie de herramientas. Para ello es necesario colocar el cursor sobre el símbolo <strong><code>?</code></strong> en la barra gris en la parte superior de cada una de las herramientas hasta que aparezca el menú de iconos, hacer clic en el icono <span class="fa fa-windows"></span> y seleccionar la herramienta con la que se desea trabajar. Estas son algunas de las herramientas disponibles:</p>
+<h3>Colocaciones</h3>
+<p>Mientras que la herramienta <strong>Contextos</strong> permite ver qué palabras rodean una palabra clave en el corpus, la herramienta Colocaciones muestra qué términos aparecen con más frecuencia cerca unos de otros. Echemos un vistazo a los términos que aparecen muy cerca de la palabra “adam”. Para ello debemos colocar el cursor sobre el símbolo <strong><code>?</code></strong> en la barra gris en la parte superior de cada una de las herramientas hasta que aparezca el menú de iconos. A continuación hacemos clic en el icono <span class="fa fa-windows"></span>, y en <em>Herramientas para el Corpus</em> seleccionamos <code>Colocaciones</code>.</p>
+<img data-align="center" alt="" title="" src="images/image049.png"><br>
+<p>Una vez seleccionada, la herramienta <strong>Colocaciones</strong> debería aparecer automáticamente y reemplazar la herramienta <strong>Cirrus</strong>.</p>
+<img data-align="center" alt="" title="" src="images/image050.png"><br>
+<p>Ahora escribimos la palabra “marzo” en el cuadro de búsqueda vacío de la herramienta <strong>Colocaciones</strong> y al hacer clic en <code>Enter</code> veremos una de tabla con las palabras más frecuentes que aparecen muy cerca de la palabra “marzo”.</p>
+<img data-align="center" alt="" title="" src="images/image051.png"><br>
+<p>De forma predeterminada, la vista de tabla muestra las tres siguientes columnas:</p>
+<ul>
+<li><strong>Término</strong>: muestra la(s) palabra(s) clave que se están buscando.</li>
+<li><strong>Colocaciones</strong>: son las palabras que se encuentran en la proximidad de cada palabra(s) clave(s).</li>
+<li><strong>Contar (contexto)</strong>: muestra el recuento de frecuencia de la colocación que se produce en las proximidades de la(s) palabra(s) clave.</li>
+</ul>
+<p>La barra deslizante <code>contexto</code> determina el número de palabras a ambos lados del término buscado. El valor predeterminado es 5 palabras a cada lado, pero puede cambiarse entre 1 y 30 palabras.</p>
+<p>Como podemos ver, la palabra “marzo” aparece con mayor frecuencia (6 veces para ser exactos) con el colocado “26”. Las variaciones de esta colocación aparecen en el corpus, con “marzo” y “tarde”, y “ marzo” y “a” también ocurriendo 3 veces, y “marzo” y “noche”, y “marzo” y “ fines” ocurriendo 2 veces. Para comparar las colocaciones en el corpus, es preciso marcar las colocaciones que deseamos ver para que la herramienta <strong>Tendencias</strong> se actualice automáticamente. Comparemos ahora las colocaciones de “marzo” con “26”, “tarde” y “a”.</p>
+<img data-align="center" alt="" title="" src="images/image052.png"><br>
+<h3>Enlaces</h3>
+<p>Esta herramienta permite analizar las colocaciones de una forma más visual. Para acceder a ella podemos hacer clic en <code>enlaces</code> y escribir las palabras “marzo” y “a” en el cuadro de búsqueda vacío de la herramienta <strong>Enlaces</strong>.</p>
+<img data-align="center" alt="" title="" src="images/image054.png"><br>
+<p>Al pasar el ratón sobre uno de los términos se muestra su frecuencia absoluta (17 en el caso de “marzo”) y los enlaces con otros términos cambian de color mostrando las conexiones.</p>
+<img data-align="center" alt="" title="" src="images/image055.png"><br>
+<p>La barra deslizante contexto determina el número de palabras a ambos lados del término buscado. El valor predeterminado es 5 palabras a cada lado, pero puede cambiarse entre 1 y 30 palabras.</p>
+<h3>Líneas de burbuja</h3>
+<p>Con esta herramienta es posible visualizar la frecuencia (el tamaño de la burbuja indica una mayor frecuencia) y la distribución de los términos en un corpus (la distribución de las burbujas a lo largo de la línea).</p>
+<img data-align="center" alt="" title="" src="images/image056.png"><br>
+<h3>Micro búsqueda</h3>
+<p>Cada documento del corpus es representado como un bloque vertical cuya altura indica su tamaño relativo en comparación con otros documentos del corpus. La ubicación de los términos de búsqueda se muestra como bloques de color (a mayor frecuencia relativa, más oscuro es el bloque de color). Los términos de búsqueda múltiples se agrupan.</p>
+<img data-align="center" alt="" title="" src="images/image057.png"><br>
+<p>La <a href="https://voyant-tools.org/docs/#!/guide/start" target="_blank">guía de ayuda</a> de <em>Voyant Tools</em> ofrece información detallada sobre todas las herramientas disponibles y sus funcionalidades.</p>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

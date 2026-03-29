@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Voyant Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
+          </li>
+          <li>
+              <a href="lectura.html"><span class="fa fa-book mr-3"></span> lectura distante</a>
+          </li>
+          <li>
+            <a href="instalacion.html"><span class="fa fa-cog mr-3"></span> instalación</a>
+          </li>
+		  <li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="herramientas.html"><span class="fa fa-wrench mr-3"></span> herramientas</a>
+          </li>
+          <li class="active">
+            <a href="codigo.html"><span class="fa fa-code mr-3"></span> exportar código</a>
+          </li>
+          <li>
+            <a href="imagenes.html"><span class="fa fa-file-image-o mr-3"></span> exportar imágenes</a>
+          </li>
+          <li>
+            <a href="recursos.html"><span class="fa fa-file-text-o mr-3"></span> otros recursos</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+<h2>Cómo incorporar <em>Voyant Tools</em> en otros sitios web</h2>
+<p><em>Voyant Tools</em> está diseñado para funcionar como un entorno independiente <a href="https://voyant-tools.org/docs/" target="_blank">voyant-tools.org</a> o como un conjunto de módulos independientes que pueden ser integrados en otros sitios web. Para obtener un enlace debemos utilizar la función de exportación colocando el cursor sobre la barra gris hasta que aparezca un menú de iconos:</p>
+<img data-align="center" alt="" title="" src="images/image058.png"><br>
+<p>Al hacer clic en el icono <code>Exportar</code> aparece un menú con las siguientes opciones:</p>
+<img data-align="center" alt="" title="" src="images/image060.png"><br>
+<ul>
+<li>URL para esta vista (Herramientas y Datos)<ul>
+<li>Genera una URL para la herramienta y los datos visualizados en ese panel; es la opción predeterminada.</li>
+</ul>
+</li>
+<li>Exportar Vista (herramientas y datos)<ul>
+<li>un bloque HTML para incrustar esta vista en otra página web: genera un fragmento de código HTML, que se puede utilizar para insertar esta sesión de <em>Voyant Tools</em> en una página web.</li>
+<li>una referencia bibliográfica para esta vista: genera la referencia bibliográfica para esta sesión de <em>Voyant Tools</em>.</li>
+<li>a new Spyral Notebook from this tool and data: Spyral Notebook es un entorno de programación construido sobre <em>Voyant Tools</em> y que lo amplía. Para más información sobre Spyral Notebook puede consultarse la <a href="https://voyant-tools.org/docs/#!/guide/notebook" target="_blank">guía de ayuda</a>.</li>
+</ul>
+</li>
+<li>Exportar la visualización:<ul>
+<li>exportar esta visualización en PNG: genera una imagen en formato PNG de la herramienta y un fragmento de código HTML que contiene la imagen.</li>
+<li>exportar esta visualización en SVG: : genera una imagen en formato SVG de la herramienta y un fragmento de código HTML que contiene la imagen.</li>
+</ul>
+</li>
+</ul>
+<p>Vamos ahora a generar un bloque HTML en la herramienta <strong>Cirrus</strong>. Para ello hacemos clic en el icono <code>Exportar</code> y seleccionamos <code>Exportar vista (Herramientas y Datos): un bloque HTML</code>. Debería aparecer una ventana emergente con un fragmento de código HTML que puede utilizarse para insertar la visualización en otro sitio web.</p>
+<img data-align="center" alt="" title="" src="images/image062.png"><br>
+<p>El resultado sería el siguiente panel interactivo:</p><br>
+<center><p><iframe style='width: 245px; height: 354px;' src='https://voyant-tools.org/tool/Cirrus/?corpus=fb8fe0f6379a5cde970d67df40886f5c'></iframe></p></center>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

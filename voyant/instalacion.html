@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Voyant Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
+          </li>
+          <li>
+              <a href="lectura.html"><span class="fa fa-book mr-3"></span> lectura distante</a>
+          </li>
+          <li class="active">
+            <a href="instalacion.html"><span class="fa fa-cog mr-3"></span> instalación</a>
+          </li>
+		  <li>
+          <li>
+            <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="herramientas.html"><span class="fa fa-wrench mr-3"></span> herramientas</a>
+          </li>
+          <li>
+            <a href="codigo.html"><span class="fa fa-code mr-3"></span> exportar código</a>
+          </li>
+          <li>
+            <a href="imagenes.html"><span class="fa fa-file-image-o mr-3"></span> exportar imágenes</a>
+          </li>
+          <li>
+            <a href="recursos.html"><span class="fa fa-file-text-o mr-3"></span> otros recursos</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+<h3>Instalación</h3>
+<p><em>Voyant Tools</em> puede utilizarse directamente <a href="https://voyant-tools.org" target="_blank">en línea</a>, y también se puede instalar el servidor Voyant como una versión independiente en nuestro propio ordenador. Esto tiene varias ventajas potenciales, incluyendo un mejor rendimiento, fiabilidad, seguridad y privacidad de los datos analizados.
+Antes de instalar el servidor Voyant en el ordenador, es preciso tener Java instalado y configurado en nuestro ordenador. Después hay que acceder la página con las <a href="https://github.com/voyanttools/VoyantServer/releases" target="_blank">últimas versiones</a> de <em>Voyant Tools</em> y hacer clic en el archivo <code>VoyantServer2.6.13.zip</code> para descargar los archivos necesarios para configurar el servidor. Se trata de un archivo zip de gran tamaño, unos 200 MB, que incluye grandes modelos de datos para el procesamiento del lenguaje. Será necesario descomprimir el archivo zip antes de poder instalarlo.
+En el Repositorio de <a href="https://github.com/voyanttools/VoyantServer" target="_blank">Github</a> del Servidor Voyant podemos encontrar información e instrucciones detalladas sobre la instalación del servidor Voyant. Para su correcto funcionamiento Voyant Server necesita que Java 11 esté instalado en nuestro ordenador (PC o Apple). Una vez descomprimido el archivo VoyantServer2.6.13.zip, solo es necesario hacer clic en <code>VoyantServer.jar</code> para ejecutar la aplicación.</p>
+<blockquote>
+<p>En algunos casos, si el programa no se ejecuta en los ordenadores Apple, es necesario abrir la terminal, cambiar al directorio de VoyantServer, <code>cd VoyantServer</code>, y escribir <code>/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/bin/java -jar VoyantServer.jar</code></p></blockquote>
+<p>Para cambiar el lenguaje de la interfaz, hay que hacer clic en el botón señalado con un círculo rojo</p>
+<img data-align="center" alt="" title="" src="images/image002.png"><br>
+<p>y luego seleccionar el lenguaje en el menú desplegable</p>
+<img data-align="center" alt="" title="" src="images/image003.png"><br>
+<p>Es también posible cambiar el lenguaje de la interfaz añadiendo <code>&amp;lang=es</code> al final del URL.</p>
+<h3>Cómo crear un corpus textual</h3>
+<p><em>Voyant Tools</em> es un entorno de lectura y análisis de texto basado en la web que permite cargar textos en diferentes formatos—TXT, HTML, XML, PDF, RTF y MS Word—para su posterior análisis. En este tutorial utilizaramos el texto plano (.txt) que tiene tres ventajas fundamentales: no tiene ningún tipo de formato adicional, no requiere un programa especial y tampoco conocimiento extra. Para crear nuestro propio corpus en texto plano debemos seguir los siguientes pasos:</p>
+<ol>
+<li>Descargar las obras con las que queremos trabajar y extraer el texto</li>
+<li>Guardar el texto con <a href="https://notepad-plus-plus.org/" target="_blank">Notepad++</a> en Windows o <a href="https://www.barebones.com/products/bbedit/" target="_blank">BBEdit</a> en Mac, utilizando en ambos casos el formato UTF-8</li>
+<li>Nombrar cada uno de los ficheros evitando usar acentos y espacios en blanco, e incluyendo metadatos de contexto (i.e. fecha, autor, obra, etc.) que nos permitirán idenficarlos en Voyant Tools: <code>GE1_01-001.txt</code>, <code>1499_Celestina.txt</code>, <code>Clarin_unicohijo.txt</code>, etc.</li>
+</ol>
+<h3>Cómo subir textos a Voyant Tools</h3>
+<p>Hay tres formas de subir textos a Voyant Tools:</p>
+<ol>
+<li>Escribiendo o pegando texto en el cuadro de texto principal (esto crea un corpus con un único documento)</li>
+</ol>
+<img data-align="center" alt="" title="" src="images/image004.png"><br><br \>
+<ol>
+<li>Escribiendo o pegando una o más URL en el cuadro de texto principal (una URL por línea)</li>
+</ol>
+<img data-align="center" alt="" title="" src="images/image005.png"><br>
+<ol>
+<li>Haciendo clic en el botón <code>Cargar</code> debajo del cuadro de texto para cargar archivos desde nuestro ordenador. Hay que seleccionar todos los archivos a la vez (pulsar la tecla Shift en el teclado del ordenador y hacer clic en cada elemento) o comprimir los archivos en una carpeta comprimida y cargar el archivo zip en <em>Voyant Tools</em>.</li>
+</ol>
+<img data-align="center" alt="" title="" src="images/image006.png"><br>
+<p>Ahora que hemos visto cómo acceder a las herramientas de <em>Voyant Tools</em> y subir textos, podemos examinar nuestro propio corpus. En este tutorial, usaremos <em>Voyant Tools</em> para observar las frecuencias de palabras, las colocaciones, las tendencias y las palabras clave en contexto en un corpus formado por 14 novelas del siglo XIX. </p>
+<blockquote>
+<p>Pedro Antonio de Alarcón (<em>Capitán veneno</em>, <em>El sombrero de tres picos</em>), Leopoldo Alas (<em>La Regenta</em>, <em>Su único hijo</em>), Fernán Caballero (<em>Clemencia</em>, <em>La gaviota</em>), Benito Pérez Galdón (<em>Doña Perfecta</em>, <em>Tristana</em>), Emilia Pardo Bazán (<em>Insolación</em>, <em>Los pazos de Ulloa</em>), José María de Pereda <em>(Peñas arriba</em>, <em>Sotileza</em>) Miguel de Unamuno <em>(Niebla</em>, <em>La tía Tula</em>). Todas las obras fueron extraídas de la <a href="https://www.cervantesvirtual.com/" target="_blank">Biblioteca Virtual Miguel de Cervantes</a>.</p>
+</blockquote>
+<p>Primero, hay que descargar el fichero <a href="https://hispanicseminary.org/Voyant/novelas-19.zip" target="_blank"><code>novelas-19.zip</code></a> en el ordenador. Este archivo zip contiene nuestro corpus de muestra, 14 archivos de texto plano (txt).</p>
+<p>Una vez conectados a <em>Voyant Tools</em>, hacer clic en subir y seleccionar el archivo <code>novelas-19.zip</code> que acabamos de guardar en el ordenador y hacer clic en <code>Revelar</code>. El contenido del archivo zip debería cargarse automáticamente dentro de la interfaz de <em>Voyant Tools</em>.</p>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

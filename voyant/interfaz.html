@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>HSMS - Manual Voyant Tools</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>filología digital</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li>
+            <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
+          </li>
+          <li>
+              <a href="lectura.html"><span class="fa fa-book mr-3"></span> lectura distante</a>
+          </li>
+          <li>
+            <a href="instalacion.html"><span class="fa fa-cog mr-3"></span> instalación</a>
+          </li>
+		  <li>
+          <li class="active">
+            <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
+          </li>
+          <li>
+            <a href="herramientas.html"><span class="fa fa-wrench mr-3"></span> herramientas</a>
+          </li>
+          <li>
+            <a href="codigo.html"><span class="fa fa-code mr-3"></span> exportar código</a>
+          </li>
+          <li>
+            <a href="imagenes.html"><span class="fa fa-file-image-o mr-3"></span> exportar imágenes</a>
+          </li>
+          <li>
+            <a href="recursos.html"><span class="fa fa-file-text-o mr-3"></span> otros recursos</a>
+          </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+
+<h2>La interfaz de trabajo</h2>
+<p>La interfaz de <em>Voyant Tools</em> muestra por defecto cinco paneles con las siguientes herramientas.</p>
+<img data-align="center" alt="" title="" src="images/image007.png"><br>
+<p><strong>Cirrus:</strong> visualiza en forma de nube de palabras aquellas de mayor frecuencia de un corpus o documento.</p>
+<img data-align="center" alt="" title="" src="images/image008.png"><br>
+<p>La nube de palabras sitúa las palabras de tal manera que los términos que aparecen con más frecuencia aparecen en el centro y tienen el tamaño más grande. A medida que el algoritmo recorre la lista y continúa dibujando palabras lo más cerca posible del centro de la visualización, también incluirá palabras pequeñas dentro de los espacios dejados por palabras más grandes que no encajan perfectamente. El color de las palabras y su posición absoluta no son significativos (si cambiamos el tamaño de la ventana o volvemos a cargar la página, las palabras pueden aparecer en una ubicación diferente).</p>
+<p><strong>Lector:</strong> muestra el texto para su lectura.</p>
+<img data-align="center" alt="" title="" src="images/image009.png"><br>
+<p>Es posible desplazarse hacia abajo dentro del lector de texto para obtener más contenido. También al pasar el cursor sobre una palabra se muestra su frecuencia en el documento. Además, se puede hacer clic en una palabra o buscarla en el cuadro de búsqueda para ver con qué frecuencia aparece en el corpus.</p>
+<p><strong>Tendencias:</strong> muestra el gráfico de distribución que representa las frecuencias de los términos en los textos de su corpus.</p>
+<img data-align="center" alt="" title="" src="images/image010.png"><br>
+<p>Cada serie del gráfico está coloreada según la palabra que representa. En la parte superior del gráfico, una leyenda muestra qué palabras están asociadas con ciertos colores. Se puede hacer clic en las palabras de la leyenda para cambiar su visibilidad. Al mantener el puntero sobre cualquier punto del gráfico, aparece un cuadro de llamada con información sobre el punto, incluida la palabra y su frecuencia.</p>
+<p><strong>Sumario:</strong> En esta ventana se ofrece una visión general de los elementos estadísticos más relevantes de nuestro corpus.</p>
+<img data-align="center" alt="" title="" src="images/image011.png"><br>
+<p>En la ventana podemos distinguir las siguientes secciones:</p>
+<ul>
+<li><em>Resumen de las características del corpus</em>, incluyendo el <em>número de documentos</em>, el <em>número total de palabras</em> (tokens/forms) y <em>palabras únicas</em> (múltiples apariciones de palabras) en el corpus.</li>
+<li><em>Extensión del documento</em>, muestra los documentos con mayor y menor extensión por número de palabras del corpus, apareciendo el número de palabras entre paréntesis después de cada título.</li>
+<li><em>Densidad de vocabulario</em>, muestra los documentos con mayor y menor densidad de vocabulario (la relación entre el número de palabras del documento y el número de palabras únicas del documento. Cuanto más cercano a uno es el índice de densidad, mayor variedad de palabras en el documento.</li>
+<li><em>Promedio de palabras por oración</em>, muestra los valores más altos y más bajos. A continuación, aparecen las cinco palabras más frecuentes en el corpus, las mismas que aparecen en <strong>Tendencias</strong>.</li>
+<li><em>Índice de legibilidad</em>, estima lo difícil que es leer un texto. La estimación se hace midiendo diferentes atributos, tal como la longitud de las palabras, las longitudes de oración y el conteo de sílabas.</li>
+<li><em>Palabras más frecuente en el corpus</em></li>
+<li><em>Palabras diferenciadas (comparadas con el resto del corpus)</em>, muestra cuán relevante es una palabra para cada documento en el corpus</li>
+</ul>
+<p><strong>Contextos</strong>: muestra una concordancia KWIC (palabra clave en contexto).</p>
+<img data-align="center" alt="" title="" src="images/image012.png"><br>
+<p>La tabla tiene las siguientes columnas:</p>
+<ul>
+<li><strong>Documento:</strong> muestra en qué documento se encuentra la palabra clave y los contextos</li>
+<li><strong>Izquierda:</strong> palabras contextuales a la izquierda de la palabra clave (la clasificación por esta columna trata las palabras en orden inverso, de derecha a izquierda de la palabra clave)</li>
+<li><strong>Términos:</strong> la palabra clave que coincide con la consulta de términos predeterminada o proporcionada por el usuario</li>
+<li><strong>Derecha:</strong> palabras contextuales a la derecha de la palabra clave</li>
+</ul>
+<p>Para seleccionar una herramienta alternativa, es preciso pasar el cursor sobre la barra gris en la parte superior de la ventana de <strong>Tendencias</strong> o <strong>Cirrus</strong> junto al símbolo <strong><code>?</code></strong> hasta que aparezca un menú de iconos . Al seleccionar el botón <strong>⊞</strong> aparece un listado de todas las otras herramientas que pueden realizar diferentes visualizaciones y análisis de texto.</p>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
