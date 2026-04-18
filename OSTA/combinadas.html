@@ -31,7 +31,7 @@
           <li>
             <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
           </li>
-          <li class="active">
+          <li>
               <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
           </li>
           <li>
@@ -62,7 +62,7 @@
     <li>
       <a href="comodines.html"><span class="fa fa-asterisk mr-3"></span>comodines y operadores</a>
     </li>
-    <li>
+    <li class="active">
       <a href="combinadas.html"><span class="fa fa-search mr-3"></span>búsquedas combinadas</a>
     </li>
     <li>
@@ -129,23 +129,21 @@
           </li>
 </ul>
     	</div>
-		</nav>		
+		</nav>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
 	  
-  <h2>Interfaz</h2>
-<p>La interfaz de consulta del <em>Old Spanish Textual Archive</em> consta de tres cajas dispuestas en horizontal: <strong>consulta básica</strong> ①, <strong>consulta avanzada</strong> ② y <strong>filtros disponibles</strong> ③.</p>
-<p><img src="images\figura1-interfaz.jpg" alt="figura-1 interfaz"></p>
-<h3>caja de consulta básica</h3>
-<p>Aquí se encuentran la <strong>ventana de entrada de datos</strong> [a], el botón para <strong>lanzar la consulta</strong> [b], el botón para <strong>limpiar la ventana de entrada de datos</strong> [c] y el botón para <strong>descargar el <em>Manual de consulta</em></strong> [d].</p>
-<p><img src="images\figura2-basica.jpg" alt="figura-2 consulta básica"></p>
-<h3>caja de consulta avanzada</h3>
-<p>Aquí se encuentran el botón <strong>Crear la consulta ⇑</strong> [a], las casillas de selección de <strong>mayúsculas</strong> y <strong>diacríticos</strong> [b], la ventana <strong>forma paleográfica</strong> [c], la ventana <strong>forma HSMS</strong> [d], la ventana <strong>lema</strong> [e], la ventana <strong>etiqueta gramatical</strong> [f]. En la zona correspondiente a Término 1, se encuentran los botones para <strong>añadir término</strong> <strong>+</strong> , <strong>añadir operador de repetición</strong> <strong>↔</strong> , lanzar el <strong>asistente para etiqueta gramatical</strong> <strong>?</strong> y <strong>añadir alternativa</strong> <strong>O .</strong>.</p>
-<p><img src="images\figura3-avanzada.jpg" alt="figura-3 consulta avanzada"></p>
-<h3>caja de filtros disponibles</h3>
-<p>Aquí se encuentran los filtros <strong>por códice</strong> [a], filtros <strong>por obra</strong> [b] y <strong>contextos</strong> y <strong>ordenación de los resultados</strong> [c], que permiten el filtrado y ordenación de los resultados sin necesidad de recrear la consulta.</p>
-<p><img src="images\figura4-filtros.jpg" alt="figura-4 filtros"></p>
-
+<h3>búsquedas combinadas</h3>
+<p>Las búsquedas combinadas son aquellas que agrupan varios elementos en la misma consulta. Existen cuatro tipos básicos de búsqueda combinada:</p>
+<h4>secuencial o yuxtapuesta</h4>
+<p>En este tipo de consulta se combinan dos o más elementos sin ninguna relación entre ellos aparte de la meramente secuencial. <code>[(lemma='hablar'%c)] [(word='galieno'%c)]</code> → para encontrar la secuencia <em>fabla</em>+<em>galieno</em>; <code>[(lemma='hablar'%c)] [(pos='NP.*'%c)]</code> → para encontrar todas las formas de <em>hablar</em> seguidas por antropónimo.</p>
+<h4>copulativa <code>&amp;</code></h4>
+<p>En este tipo de consulta se buscan los registros que <strong>incluyan todos</strong> los términos unidos mediante el operador <code>&amp;</code>. <code>[(lemma='traer' &amp; pos='V.II.*'%c)]</code> → para encontrar las formas de pretérito imperfecto de indicativo del verbo <em>traer</em>; <code>[(word='fabla') &amp; (lemma='hablar')]</code> → para encontrar la palabra <em>fabla</em> cuando pertenece al lema <em>hablar</em>; <code>[(pos='V.*'%c) &amp; (lemma='pro.*'%c)\]</code> → para encontrar todos los verbos que comienzan por <em>pro</em>-.</p>
+<h4>disyuntiva <code>|</code></h4>
+<p>En este tipo de consulta se buscan los registros que <strong>incluyan cualquiera</strong> de los términos unidos mediante el operador <code>|</code>. <code>[(word='alto'%c) | (word='bajo'%c)]</code> → para encontrar las palabras <em>alto</em> o <em>bajo</em>.</p>
+<h4>negativa <code>&amp;!</code></h4>
+<p>En este tipo de consulta se buscan los registros que <strong>excluyan</strong> el segundo término de los dos que aparecen unidos por el operador <code>&amp;!</code>. <code>[(lemma=&quot;sierra&quot;%c) &amp;! (pos=&quot;V.*&quot;%c)]</code> → para encontrar todas las formas del lema <em>sierra</em> excepto cuando su categoría gramatical es verbo. <code>[(word='a.*'%c) &amp;! (pos='SP.*'%c)\]</code> → para encontrar todas las palabras que comienzan por <em>a</em> excepto cuando son preposiciones.</p>
+<p><em><strong>NOTA</strong>:</em> El orden de los términos en la consulta no es arbitrario. Así <code>[(lemma='f.*' &amp; pos='NP000G0'%c)]</code> → para encontrar todas las formas de los lemas que comienzan por <em>f</em> y son topónimos, mientras que <code>[(pos='NP000G0' &amp; lemma='f.*'%c)]</code> → para encontrar todas las palabras etiquetadas como topónimos que comienzan por <em>f</em>.</p>
       </div>
 		</div>
 

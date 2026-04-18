@@ -59,7 +59,7 @@
     <li>
       <a href="experta.html"><span class="fa fa-search mr-3"></span>consulta experta</a>
     </li>
-    <li>
+    <li class="active">
       <a href="comodines.html"><span class="fa fa-asterisk mr-3"></span>comodines y operadores</a>
     </li>
     <li>
@@ -73,7 +73,7 @@
     </li>
   </ul>
 </li>
-          <li class="active">
+          <li>
             <a href="cita.html"><span class="fa fa-pencil mr-3"></span> cómo citar</a>
           </li>
           <li>
@@ -132,26 +132,80 @@
 		</nav>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-	  
-  <h2>Cómo citar el <em>Old Spanish Textual Archive</em> (OSTA)</h1>
-<p>El <em>Old Spanish Textual Archive</em> (OSTA) es un recurso electrónico de acceso libre y gratuito en la red con las siguientes <strong>condiciones de uso</strong>:</p>
+<h3>caracteres comodín y operadores</h3>
+<p>Si se quieren encontrar todas las formas del sustantivo &quot;planta&quot;, es posible hacer las siguientes dos consultas: <code>[(word='planta'%c)]</code> y <code>[(word='plantas'%c)]</code>, sin embargo, además de no tener los resultados en una única consulta, estos incluyen tanto la forma verbal como el sustantivo. Para evitar esto se pueden utilizar caracteres comodín y operadores y efectuar una búsqueda combinada para especificar tanto formas en singular y plural como la categoría gramatical: <code>[(word='plantas?' &amp; pos='NC.*'%c)]</code>, y lo que ahora se busca son las palabras <em>planta</em> o <em>plantas</em> cuando son un sustantivo (con el comodín <code>?</code> se indica que el carácter que le precede puede aparecer cero veces o una vez, y con el operador <code>.*</code> que la etiqueta gramatical debe empezar por <code>NC</code>). A continuación se describen los caracteres comodín y los operadores más habituales:</p>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>comodín</th>
+<th>significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>equivale a un único carácter: <code>[(word='ca.a'%c)]</code> → <em>cada</em>, <em>cala</em>, <em>cama</em>, <em>cara</em>, <em>casa</em>, …; <code>[(word='ca..a'%c)]</code> → <em>cabra</em>, <em>cabsa</em>, <em>caida</em>, <em>carta</em>, <em>causa</em>, …</td>
+</tr>
+<tr>
+<td><code>.*</code></td>
+<td>equivale a cero o más caracteres: <code>[(word='amarga.*'%c)]</code> → <em>amarga</em>, <em>amargad</em>, <em>amargado</em>, <em>amargamente</em>, …</td>
+</tr>
+<tr>
+<td><code>.+</code></td>
+<td>equivale a uno o más caracteres: <code>[(word='amarga.+'%c)]</code> → <em>amargad</em>, <em>amargado</em>, <em>amargamente</em>, … pero no <em>amarga</em></td>
+</tr>
+<tr>
+<td><code>..+</code></td>
+<td>equivale a tres o más caracteres: <code>[(word='amarga..+'%c)]</code> → <em>amargados</em>, <em>amargamente</em> … pero no <em>amarga</em>, <em>amargar</em>, <em>amargado</em></td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>el carácter que le precede puede aparecer cero veces o una vez: <code>[(word=res?cebir'%c)]</code> → <em>recebir</em> y <em>rescebir</em></td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>el carácter que le precede puede aparecer cero o más veces: <code>[(word='cas*as*'%c)]</code> → <em>casa</em>, <em>casas</em>, <em>cassa</em>, <em>cassas</em></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>el carácter que le precede puede aparecer una o más veces: <code>[(word='car+o'%c)]</code> → <em>caro</em> y <em>carro</em></td>
+</tr>
+<tr>
+<td><code>{n}</code> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>el carácter o la expresión que le precede puede aparecer tantas veces como indique n (nº de ocurrencias): <code>[(word='.*o{2}.*'%c)]</code> → para todas las palabras que contienen dos oes seguidas: <em>Bootes</em>, <em>loor</em>, etc.; <code>[(pos='NP.*'%c)]{2}</code> → para obtener todas las ocurrencias de dos nombre propios seguidos: <em>Ruy Diaz</em>, <em>Pero Vermudez</em>, <em>Minaya Albarfanez</em>, etc.</td>
+</tr>
+<tr>
+<td><code>{m,n}</code></td>
+<td>operador de repetición (m = número mínimo, n = número máximo de palabras): <code>[(pos='DA.*'%c)] [(pos='A.*'%c)]{1,2} [(lemma='hombre'%c) | (lemma='mujer'%c)]</code> → para obtener todas las ocurrencias de un artículo definido seguido por uno o dos adjetivos, más cualquiera de las formas de los lemas hombre o mujer.</td>
+</tr>
+<tr>
+<td><code>[]</code></td>
+<td>los corchetes, sin espacio entre ellos, equivalen a una única palabra: <code>[(word='yo'%c)] [] [(word='doy'%c)]</code> → para encontrar las palabras que aparecen entre <em>yo</em> y <em>doy</em>; <code>[(lemma='dar'%c)] [] [(pos='SP.*'%c)] []</code> → para encontrar todas las palabras que ocurren en una cadena de palabras.</td>
+</tr>
+<tr>
+<td><code>[ ]</code></td>
+<td>cualquiera de los caracteres dentro de los corchetes puede aparecer como mucho una vez: <code>[(word='pro[buv]ar'%c)]</code> → <em>probar</em>, <em>prouar</em>, <em>provar</em>.</td>
+</tr>
+<tr>
+<td><code>[ ]*</code></td>
+<td>cualquiera de los caracteres dentro de los corchetes puede aparecer cero o más veces: <code>[(word='tra[buv]a[jlx]*o'%c)\]</code> → <em>trabajo</em>, <em>traballo</em>, <em>trabaxo</em>, <em>trauajo</em>, <em>trauallo</em>, <em>trauaxo</em>, <em>travajo</em></td>
+</tr>
+<tr>
+<td><code>[^ ]</code></td>
+<td>cualquier carácter, excepto los caracteres dentro de los corchetes, puede aparecer: <code>[(word='a[^mt]ar'%c)]</code> → <em>abar</em>, <em>açar</em>, <em>acar</em>, <em>adar</em>, <em>agar</em>, <em>aiar</em>, <em>alar</em>, <em>anar</em>, <em>apar</em>, <em>arar</em>, <em>asar</em>, <em>auar</em>, <em>azar</em>, <em>aƽar</em>, pero no <em>amar</em> o <em>atar</em></td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>operador de negación, <code>[(pos!='V.*'%c)]</code> → para encontrar todas las formas de las categorías gramaticales presentes en una obra, autor, etc., excepto las verbales</td>
+</tr>
+</tbody>
+</table>
+<p>Diferentes caracteres comodín y operadores pueden combinarse para efectuar consultas más complejas. Por ejemplo:</p>
 <ul>
-<li>Los usuarios citarán adecuadamente el <em>Old Spanish Textual Archive</em> en los trabajos en que utilicen datos del mismo. El formato de cita puede ser el siguiente (o uno similar que incluya los mismos datos bibliográficos):</li>
+<li><code>[(word='h?a[buv]er'%c)]</code> → para encontrar todas las variantes ortográficas del infinitivo <em>haber</em>.</li>
+<li><code>[(word='fruc?[ht].*'%c)]</code> → para encontrar todas las variantes ortográficas de <em>fruta</em>/<em>fruto</em>.</li>
 </ul>
-<blockquote>
-<p>Gago Jover, Francisco y F. Javier Pueyo Mena. 2021- . <em>Old Spanish Textual Archive</em>. Hispanic Seminary of Medieval Studies. En línea en
-<a href="http://osta.oldspanishtextualarchive.org/">http://osta.oldspanishtextualarchive.org</a> [<em>fecha de la consulta</em>]</p>
-</blockquote>
-<ul>
-<li>Las obras individuales deben citarse utilizando el identificador de la obra (e.g., HSMS-0003-0001) o, al citar un códice completo, el identificador del códice (e.g., HSMS-0003), junto con otra información relevante, como el autor y el título.</li>
-<li>Para permitir que otros investigadores puedan comprobar los resultados obtenidos, se recomienda incluir la consulta efectuada tal como aparece en los <strong>resultados</strong>, incluyendo no solo el término o términos o expresión buscados, sino también los filtros empleados:
-<ul>
-<li><code>[(lemma='perro'%cd)] within text sort by yearobra</code></li>
-<li><code>[(lemma='aceite'%cd)] :: match.text_materia3 = &quot;medicina&quot; &amp; match.text_sigloobra = &quot;14&quot; within text sort by word</code></li>
-</ul>
-</li>
-<li>Los usuarios informarán a los responsables del <em>Old Spanish Textual Archive</em> de cualquier hallazgo científico relevante que se derive de la consulta de los datos. Por último, los usuarios informarán a los editores [<a href="file:///G:/My Drive/HSMS/HSMS-OSTA/manual/hispanicseminary.ltd@gmail.com">hispanicseminary.ltd@gmail.com</a>] de los errores de transcripción o fallos de funcionamiento que detecten para así contribuir a mejorar este recurso.</li>
-</ul>
+
 
       </div>
 		</div>

@@ -31,7 +31,7 @@
           <li>
             <a href="index.html"><span class="fa fa-home mr-3"></span> inicio</a>
           </li>
-          <li class="active">
+          <li>
               <a href="interfaz.html"><span class="fa fa-desktop mr-3"></span> interfaz</a>
           </li>
           <li>
@@ -68,7 +68,7 @@
     <li>
       <a href="complejas.html"><span class="fa fa-search mr-3"></span>búsquedas complejas</a>
     </li>
-    <li>
+    <li class="active">
       <a href="otras.html"><span class="fa fa-search mr-3"></span>otras búsquedas</a>
     </li>
   </ul>
@@ -129,22 +129,57 @@
           </li>
 </ul>
     	</div>
-		</nav>		
+		</nav>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-	  
-  <h2>Interfaz</h2>
-<p>La interfaz de consulta del <em>Old Spanish Textual Archive</em> consta de tres cajas dispuestas en horizontal: <strong>consulta básica</strong> ①, <strong>consulta avanzada</strong> ② y <strong>filtros disponibles</strong> ③.</p>
-<p><img src="images\figura1-interfaz.jpg" alt="figura-1 interfaz"></p>
-<h3>caja de consulta básica</h3>
-<p>Aquí se encuentran la <strong>ventana de entrada de datos</strong> [a], el botón para <strong>lanzar la consulta</strong> [b], el botón para <strong>limpiar la ventana de entrada de datos</strong> [c] y el botón para <strong>descargar el <em>Manual de consulta</em></strong> [d].</p>
-<p><img src="images\figura2-basica.jpg" alt="figura-2 consulta básica"></p>
-<h3>caja de consulta avanzada</h3>
-<p>Aquí se encuentran el botón <strong>Crear la consulta ⇑</strong> [a], las casillas de selección de <strong>mayúsculas</strong> y <strong>diacríticos</strong> [b], la ventana <strong>forma paleográfica</strong> [c], la ventana <strong>forma HSMS</strong> [d], la ventana <strong>lema</strong> [e], la ventana <strong>etiqueta gramatical</strong> [f]. En la zona correspondiente a Término 1, se encuentran los botones para <strong>añadir término</strong> <strong>+</strong> , <strong>añadir operador de repetición</strong> <strong>↔</strong> , lanzar el <strong>asistente para etiqueta gramatical</strong> <strong>?</strong> y <strong>añadir alternativa</strong> <strong>O .</strong>.</p>
-<p><img src="images\figura3-avanzada.jpg" alt="figura-3 consulta avanzada"></p>
-<h3>caja de filtros disponibles</h3>
-<p>Aquí se encuentran los filtros <strong>por códice</strong> [a], filtros <strong>por obra</strong> [b] y <strong>contextos</strong> y <strong>ordenación de los resultados</strong> [c], que permiten el filtrado y ordenación de los resultados sin necesidad de recrear la consulta.</p>
-<p><img src="images\figura4-filtros.jpg" alt="figura-4 filtros"></p>
+
+<h3>signos de puntuación.</h3>	  
+<p>Las siguientes etiquetas son utilizadas para los signos de puntuación:</p>
+<ul>
+<li><strong>PUNCT</strong> para todos los signos de puntuación</li>
+<li><strong>Fz</strong> para el calderón ¶</li>
+<li><strong>Fs</strong> para todas las variantes de <em>etcétera</em></li></ul>
+<p>Para hacer una búsqueda de puntuación existen varias opciones:
+<ul>
+<li><code>[(hsms=';' & pos='PUNCT'%c)]</code> para encontrar todos los puntos y coma</li>
+<li><code>[(hsms='\.' & pos='PUNCT'%c)]</code> para encontrar todos los puntos (en este caso hay que escapar el carácter con <code>\</code> para que lo busque como tal y no como comodín</li>
+<li><code>[(pos='PUNCT'%c)]</code> para encontrar cualquier signo de puntuación</li>
+<li><code>[(hsms='\.'%c)] [(pos='C.+'%c)]</code> para encontrar cualquier conjunción precedida por un punto</li>
+<li><code>[(pos!='PUNCT'%c)] [(pos='C.+'%c)]</code> para encontrar cualquier conjunción NO precedida por signo de puntuación</li></ul></p>
+<h3>búsquedas por lengua (no principal).</h3>
+<p>Las lenguas principales de OSTA son las siguientes:</p>
+<ul>
+<li>castellano</li>
+<li>castellano occidental</li>
+<li>asturiano</li>
+<li>leonés</li>
+<li>navarro</li>
+<li>navarro-aragonés</li>
+<li>aragonés</li>
+<li>riojano</li>
+</ul>
+<p>y es posible filtrar y ordenar los resultados utilizando el filtro &quot;Lengua principal&quot;.</p>
+<p>Sin embargo, cuando un texto contiene pasajes escritos en una lengua que no sea ninguna de las lenguas principales, las palabras de estos pasajes tienen como lema la etiqueta de la lengua correspondiente. Según esto, la consulta</p>
+<ul>
+<li><code>[(lemma='HEB'%c)] within text sort by yearobra</code></li>
+</ul>
+<p>devuelve todas las palabras etiquetadas como hebreas, mientras que la consulta</p>
+<ul>
+<li><code>[(word='a.*'%c) &amp; (lemma='LAT'%c)] within text sort by yearobra</code></li>
+</ul>
+<p>devuelve todas las palabras latinas que comienzan por <em>a</em>.</p>
+<p>Además, todas las palabras de cualquier lengua no principal tienen asignada la misma etiqueta gramatical, LANG, por lo que la consulta</p>
+<ul>
+<li><code>[(pos='LANG'%c)] within text sort by yearobra</code></li>
+</ul>
+<p>devuelve todas las palabras en el corpus que no pertenecen a ninguna de las lenguas principales.</p>
+<h3>búsqueda de formas desconocidas.</h3>
+<p>Existe en OSTA también un número reducido, pero significativo de palabras (menos de 250.000, aproximadamente 0.6% del total) que el etiquetador morfológico ha sido incapaz de identificar. Todas las palabras desconocidas tienen el lema UNK. Así, la consulta</p>
+<ul>
+<li><code>[(word='.*ones'%c) &amp; (lemma='UNK.*'%c)] within text sort by yearobra</code></li>
+</ul>
+<p>devuelve todas las palabras desconocidas en el corpus que terminan en -<em>ones</em>.</p>
+
 
       </div>
 		</div>
