@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HSMS - Manual HSMS proofer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+  <div style="overflow-y: auto; height: calc(100vh - 50px);">
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>materiales y guías<br>de formación</h3>
+
+	  			</div>
+	  		</div>
+          <ul class="list-unstyled components mb-5">
+            <li> <a href="index.html"><span class="fa fa-home mr-3"></span>
+                inicio</a> </li>
+            <li> <a href="prooferDOS.html"><span class="fa fa-file-text-o mr-3"></span>
+                proofer DOS</a> </li>
+            <li class="active"> <a href="HSMSproofer.html"><span class="fa fa-file-text-o mr-3"></span>
+                HSMS proofer</a> </li>
+            <li> <a href="instalacion.html"><span class="fa fa-cogs mr-3"></span>
+                requisitos e instalación</a> </li>
+            <li> <a href="validacion.html"><span class="fa fa-check-square-o mr-3"></span>
+                validación de textos</a> </li>
+            <li> <a href="incidencias.html"><span class="fa fa-list mr-3"></span>
+                listado de incidencias</a> </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+</div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>HSMS proofer</h2>
+<p>Las limitaciones del programa original, entre ellas su dependencia del entorno MS-DOS y la imposibilidad de generar informes en formatos modernos, llevaron al desarrollo de una nueva versión: <code>HSMS Proofer</code>, una aplicación escrita en <a href="https://www.r-project.org/">R</a> y <a href="https://shiny.posit.co/">Shiny</a> adaptada a los entornos de trabajo actuales.</p>
+<h3>Filosofía y funcionamiento</h3>
+<p>La frase «Proofer señala; el editor decide» resume la filosofía tanto del programa original como de esta nueva versión. <code>HSMS Proofer</code> es una herramienta de validación para transcripciones de manuscritos preparadas de acuerdo con las convenciones del Hispanic Seminary of Medieval Studies (HSMS). Analiza ficheros de texto plano y señala posibles incidencias estructurales, editoriales y técnicas que pueden requerir revisión, pero no modifica automáticamente el texto: todas las decisiones de corrección siguen siendo responsabilidad del editor.</p>
+<p><code>HSMS Proofer</code> produce un informe de diagnóstico en pantalla y permite descargar los resultados en formato de texto plano (TXT) o como tabla separada por tabuladores (TSV). En ambos casos se indica la línea, la columna, el tipo de incidencia, el texto afectado y una breve explicación.</p>
+<h3>Desarrollo</h3>
+<p>En lugar de desarrollar un nuevo validador desde cero, se optó por recurrir a la ingeniería inversa para analizar las tres tablas internas que regulaban el comportamiento del programa original:</p>
+<ul>
+<li><em>Characters</em> (caracteres): lista de caracteres permitidos en la transcripción de manuscritos</li>
+<li><em>Mnemonics</em> (etiquetas): lista de etiquetas permitidas en el manuscrito; instruye al programa en el análisis de las etiquetas y sus componentes textuales</li>
+<li><em>Functional Characters</em> (caracteres funcionales): caracteres que desempeñan una función específica en la transcripción de manuscritos</li>
+</ul>
+<p>El análisis de estas tablas, combinado con las reglas establecidas en el <em>Manual of Manuscript Transcription for the Dictionary of the Old Spanish Language</em>, sirvió de base para el desarrollo de <code>HSMS Proofer</code> mediante un diálogo iterativo con ChatGPT. El proceso consistió en solicitar a esta herramienta la escritura de la aplicación Shiny de forma progresiva, resolviendo un problema cada vez. La incorporación de las tres tablas al proceso de desarrollo llevó a ChatGPT a proponer una arquitectura modular que organiza las incidencias en tres categorías:</p>
+<ul>
+<li><strong>Incidencias técnicas</strong>: nombre y formato del fichero, detección de diacríticos Unicode combinantes, y verificación de la correcta apertura y cierre de caracteres funcionales: <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>[</code>, <code>]</code>, <code>&lt;</code> y <code>&gt;</code></li>
+<li><strong>Incidencias editoriales</strong>: extensión de líneas, líneas vacías, caracteres no permitidos, etiquetas en minúscula, entre otras</li>
+<li><strong>Incidencias estructurales</strong>: inserciones, borrados y reconstrucciones de texto, marcas de ilegibilidad, formato de etiquetas estructurales, entre otras</li>
+</ul>
+<p>El diseño visual de la aplicación fue posteriormente refinado con la ayuda de Gemini 3.1 pro.</p>      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HSMS - Manual HSMS proofer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+  <div style="overflow-y: auto; height: calc(100vh - 50px);">
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>materiales y guías<br>de formación</h3>
+
+	  			</div>
+	  		</div>
+          <ul class="list-unstyled components mb-5">
+            <li> <a href="index.html"><span class="fa fa-home mr-3"></span>
+                inicio</a> </li>
+            <li> <a href="prooferDOS.html"><span class="fa fa-file-text-o mr-3"></span>
+                proofer DOS</a> </li>
+            <li> <a href="HSMSproofer.html"><span class="fa fa-file-text-o mr-3"></span>
+                HSMS proofer</a> </li>
+            <li> <a href="instalacion.html"><span class="fa fa-cogs mr-3"></span>
+                requisitos e instalación</a> </li>
+            <li class="active"> <a href="validacion.html"><span class="fa fa-check-square-o mr-3"></span>
+                validación de textos</a> </li>
+            <li> <a href="incidencias.html"><span class="fa fa-list mr-3"></span>
+                listado de incidencias</a> </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+</div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Validación de un fichero</h2>
+<h3>Ejecución de la aplicación</h2>
+<p>Para ejecutar <code>HSMS Proofer</code> basta con hacer doble clic sobre el fichero <code>proofer_app.R</code>, que se encuentra dentro de la carpeta <code>HSMS-PROOFER</code>. El sistema abrirá RStudio y cargará el archivo automáticamente. A continuación, hay que hacer clic en el botón <em>Run App</em>, situado en la parte superior del editor de RStudio.</p>
+<p><img src="images/fig_3.jpg" alt="botón RUN APP" /></p>
+<center><p><strong>Figura 3.</strong> Botón <em>Run App</em> en la parte superior del editor de RStudio.</p></center>
+<p>Una vez pulsado el botón, la aplicación se iniciará y se abrirá una nueva ventana.</p>
+<p><img src="images/fig_4.jpg" alt="Interfaz principal de HSMS Proofer" /></p>
+<center><p><strong>Figura 4.</strong> Interfaz principal de la aplicación.</p></center>
+<p>El proceso completo puede realizarse desde esa ventana. Si se prefiere utilizar el navegador del ordenador, hay que pulsar el botón <em>Open in Browser</em>. En ambos casos, la interfaz de la aplicación será la misma.</p>
+<h3>Selección del fichero</h3>
+<p>Para analizar una transcripción realizada según las normas del HSMS, es necesario cargar el fichero correspondiente en la aplicación. Para ello, hay que pulsar el botón <em>Browse…</em>, lo que abrirá el explorador de archivos; a continuación, hay que localizar el fichero que se desea validar y hacer doble clic sobre él.</p>
+<p>La carga del fichero inicia automáticamente el proceso de validación, sin que sea necesaria ninguna acción adicional hasta que este concluya. Si el fichero es de gran tamaño o tiene una estructura compleja, el proceso puede tardar varios minutos (aproximadamente 25 segundos por cada 100 KB). Durante ese tiempo, aparecerá una pequeña ventana con una barra de progreso.</p>
+<p><img src="images/fig_5.jpg" alt="Ventana de progreso durante la validación" /></p>
+<center><p><strong>Figura 5.</strong> Ventana de progreso durante la validación.</p></center>
+<h3>Resultado sin incidencias</h3>
+<p>Si la validación finaliza sin detectar ningún problema, aparecerá un mensaje en verde indicando que no se han encontrado incidencias y no se mostrará ninguna tabla de resultados.</p>
+<p><img src="images/fig_6.jpg" alt="Resultado de una validación sin incidencias" /></p>
+<center><p><strong>Figura 6.</strong> Resultado de una validación sin incidencias.</p></center>
+<h3>Resultado con incidencias</h3>
+<p>Si la aplicación detecta algún problema, aparecerá un mensaje en rojo indicando el número total de incidencias encontradas. Debajo del mensaje se mostrará una tabla con la información detallada de cada incidencia, que incluye los siguientes campos:</p>
+<ul>
+<li>la línea;</li>
+<li>la columna;</li>
+<li>el tipo de incidencia;</li>
+<li>el texto afectado;</li>
+<li>una breve explicación.</li>
+</ul>
+<p><img src="images/fig_7.jpg" alt="Resultado de una validación con incidencias" /></p>
+<center><p><strong>Figura 7.</strong> Resultado de una validación con incidencias.</p></center>
+<p>Por defecto, la tabla muestra las incidencias en bloques de 10, pero es posible seleccionar cuántas se desean ver en cada página: 10, 25, 50 o 100. Al hacer clic sobre una fila, esta cambiará de color y en la ventana inferior aparecerá la información correspondiente a esa incidencia.</p>
+<h3>Descarga de informes</h3>
+<p>A la izquierda de la pantalla hay dos botones que permiten descargar el informe de incidencias:</p>
+<ul>
+<li><em>Descargar informe TSV</em>: genera una tabla separada por tabuladores, útil para abrir los datos en una hoja de cálculo.</li>
+</ul>
+<p><img src="images/fig_8.jpg" alt="Informe en formato TSV" /></p>
+<center><p><strong>Figura 8.</strong> Informe en formato TSV.</p></center>
+<ul>
+<li><em>Descargar informe TXT</em>: genera un informe en texto plano, más legible para revisión directa.</li>
+</ul>
+<p><img src="images/fig_9.jpg" alt="Informe en formato TXT" /></p>
+<center><p><strong>Figura 9.</strong> Informe en formato TXT.</p></center>
+<p>Ambos formatos contienen la misma información. El fichero descargado se guardará en la carpeta de descargas del ordenador.</p>
+<h3>Corrección del fichero</h3>
+<p><code>HSMS Proofer</code> no corrige automáticamente el texto. Su función es señalar posibles problemas para que el editor los revise y decida cómo actuar. Para ello, se recomienda abrir el fichero de transcripción con un editor de texto plano: <a href="https://notepad-plus-plus.org/">Notepad++</a> en Windows o <a href="https://www.barebones.com/products/bbedit/">BBEdit</a> en Mac OS.</p>
+<blockquote>
+<p><strong>Nota:</strong> Para el correcto visionado de los ficheros se recomienda utilizar fuentes monoespaciadas: Windows (Cascadia code, Consolas, Courier New o, Lucida Console), Mac OS (Courier &amp; Courier New, Menlo, Monaco, o SF Mono)</p>
+</blockquote>
+<p>Una vez abierto el fichero, hay que ir a la línea indicada en la tabla de incidencias, comprobar el problema señalado y corregirlo si procede.</p>
+<p>A modo de ejemplo, si la aplicación informa de la siguiente incidencia:</p>
+<blockquote>
+<p>El folio 2 debe ir de r a v.</p>
+</blockquote>
+<p>y la sitúa en la línea 57, esto indica que puede haber un problema en el orden de los folios: por ejemplo, que aparezca una etiqueta <code>[fol. 2v]</code> antes de <code>[fol. 2r]</code>, o que un folio anterior haya sido etiquetado incorrectamente. En este caso concreto, el error consistía en haber escrito <code>[fol. 2v]</code> en lugar de <code>[fol. 1v]</code>.</p>
+<p>Una vez corregido el fichero, hay que guardarlo y volver a validarlo con <code>HSMS Proofer</code>. Cuando la validación no muestre ninguna incidencia, se puede pasar a la siguiente fase del proceso: la corrección de la transcripción y su posterior procesamiento mediante el <code>analizador corpus OSTA</code>, otra herramienta desarrollada por el HSMS para el tratamiento de los textos incluidos en el <em>Old Spanish Textual Archive</em>.</p>
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

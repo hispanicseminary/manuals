@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HSMS - Manual HSMS proofer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+  <div style="overflow-y: auto; height: calc(100vh - 50px);">
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>materiales y guías<br>de formación</h3>
+
+	  			</div>
+	  		</div>
+          <ul class="list-unstyled components mb-5">
+            <li> <a href="index.html"><span class="fa fa-home mr-3"></span>
+                inicio</a> </li>
+            <li> <a href="prooferDOS.html"><span class="fa fa-file-text-o mr-3"></span>
+                proofer DOS</a> </li>
+            <li> <a href="HSMSproofer.html"><span class="fa fa-file-text-o mr-3"></span>
+                HSMS proofer</a> </li>
+            <li class="active"> <a href="instalacion.html"><span class="fa fa-cogs mr-3"></span>
+                requisitos e instalación</a> </li>
+            <li> <a href="validacion.html"><span class="fa fa-check-square-o mr-3"></span>
+                validación de textos</a> </li>
+            <li> <a href="incidencias.html"><span class="fa fa-list mr-3"></span>
+                listado de incidencias</a> </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+</div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Requisitos e instalación</h2>
+<p>La aplicación <code>HSMS Proofer</code> está escrita en R y se ejecuta como una aplicación Shiny. Antes de lanzar la aplicación, el usuario debe tener instalado <a href="https://www.r-project.org/">R</a>,  <a href="https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads">RStudio</a>, y <code>HSMS Proofer</code>.</p>
+<h3 id="instalación-de-r">Instalación de R</h3>
+<p>R es un lenguaje de programación y entorno estadístico de código abierto ampliamente utilizado en el análisis de datos. La mejor manera de instalarlo es descargándolo desde los servidores de <a href="https://cran.r-project.org/mirrors.html">The Comprehensive R Archive Network (CRAN)</a>, repositorio oficial que almacena todas las versiones de R y las librerías publicadas. El proceso de instalación varía según el sistema operativo:</p>
+<ul>
+<li><i class="fa fa-windows fa-lg">&nbsp;&nbsp;</i><strong>Windows</strong>: descargar la versión más reciente desde este <a href="https://cran.r-project.org/bin/windows/base/">enlace</a> haciendo clic en <em>Download R-4.6.0 for Windows</em> (el número de versión puede variar, ya que R se actualiza con frecuencia). Una vez descargado el fichero, instalarlo como cualquier otro programa de Windows.
+</li>
+<li><i class="fa fa-apple fa-lg"></i>&nbsp;&nbsp;<strong>Mac OS</strong>: obtener la última versión desde este <a href="https://cran.r-project.org/bin/macosx/">enlace</a>. Seleccionar el fichero adecuado según el procesador del equipo: <code>R-4.6.1-arm64.pkg</code> para ordenadores con procesador Apple de la serie M, y <code>R-4.6.1-x86_64.pkg</code> para ordenadores con procesador Intel (el número de versión puede variar). Una vez descargado el fichero, instalarlo como cualquier otro programa de Mac OS.
+</li>
+</ul>
+<h3>Instalación de RStudio</h3>
+<p>RStudio es un entorno de desarrollo integrado (IDE) que facilita el trabajo con R al proporcionar una interfaz gráfica con editor de código, consola y herramientas de visualización. Para instalarlo, acceder a la <a href="https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads">página de descargas de RStudio</a>, seleccionar el fichero correspondiente al sistema operativo (Windows o Mac OS) y proceder a la instalación como con cualquier otro programa.</p>
+<blockquote>
+<p><strong>Nota:</strong> R debe instalarse siempre antes que RStudio, nunca al revés.</p>
+</blockquote>
+<h3>Instalación de paquetes de R</h3>
+<p><code>HSMS Proofer</code> requiere los paquetes de R <code>shiny</code>, <code>DT</code> y <code>bslib</code>. Pueden instalarse de dos maneras:</p>
+<ul>
+<li><p><strong>Mediante la consola de R o RStudio</strong>: abrir la consola, escribir el siguiente comando y pulsar Intro:</p>
+<pre><code>install.packages(c(&quot;shiny&quot;, &quot;DT&quot;, &quot;bslib&quot;))
+</code></pre>
+</li>
+<li><p><strong>Mediante la interfaz de RStudio</strong>: ir a la pestaña <em>Packages</em>, situada habitualmente en el panel inferior derecho. Hacer clic en el botón <em>Install</em>, escribir los nombres de los paquetes (<code>shiny</code>, <code>DT</code> y <code>bslib</code>) en el campo <em>Packages</em>, marcar la casilla <em>Install dependencies</em> y hacer clic en <em>Install</em>.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Nota:</strong> Los paquetes <code>shiny</code>, <code>DT</code> y <code>bslib</code> solo deben instalarse una vez.</p>
+</blockquote>
+<h3>Instalación de HSMS Proofer</h3>
+<p>Para instalar <code>HSMS Proofer</code>, acceder al repositorio del proyecto en <a href="https://github.com/7PartidasDigital/HSMS-PROOFER">GitHub</a>. Hacer clic en el botón verde <em>Code</em>, situado en la parte superior derecha, y seleccionar la opción <em>Download ZIP</em> en el menú desplegable. Se descargará un fichero llamado <code>HSMS-PROOFER-main.zip</code>, que deberá descomprimirse en la carpeta que se considere adecuada. Una vez descomprimido, se recomienda renombrar la carpeta <code>HSMS-PROOFER-main</code> como <code>HSMS-PROOFER</code>.</p>
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

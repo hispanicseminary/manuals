@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HSMS - Manual HSMS proofer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+  <div style="overflow-y: auto; height: calc(100vh - 50px);">
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>materiales y guías<br>de formación</h3>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <ul class="list-unstyled components mb-5">
+            <li> <a href="index.html"><span class="fa fa-home mr-3"></span>
+                inicio</a> </li>
+            <li> <a href="prooferDOS.html"><span class="fa fa-file-text-o mr-3"></span>
+                proofer DOS</a> </li>
+            <li> <a href="HSMSproofer.html"><span class="fa fa-file-text-o mr-3"></span>
+                HSMS proofer</a> </li>
+            <li> <a href="instalacion.html"><span class="fa fa-cogs mr-3"></span>
+                requisitos e instalación</a> </li>
+            <li> <a href="validacion.html"><span class="fa fa-check-square-o mr-3"></span>
+                validación de textos</a> </li>
+            <li class="active"> <a href="incidencias.html"><span class="fa fa-list mr-3"></span>
+                listado de incidencias</a> </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+</div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Listado de incidencias</h2>
+<p>A continuación se ofrecen tres tablas con las diferentes incidencias que <code>HSMS Proofer</code> puede detectar en las transcripciones paleográficas, organizadas según el tipo de problema: incidencias técnicas, editoriales y estructurales. Cada tabla consta de tres columnas: la primera recoge el mensaje que aparece en la aplicación; la segunda explica la regla de validación en la que se basa la detección; y la tercera indica la sección o secciones relevantes del <a href="enlace"><em>Manual of Manuscript Transcription for the Dictionary of the Old Spanish Language</em></a>, disponible en línea, donde puede consultarse la norma correspondiente.</p>
+<h3>Validador técnico</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>mensaje en HSMS proofer</th>
+<th>regla HSMS</th>
+<th>referencia en el manual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nombre inválido: debe ser <code>TEXT.SIGLA.txt</code>, con <code>SIGLA</code> alfanumérica en mayúsculas.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>El fichero no parece estar correctamente codificado en UTF-8.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Se ha detectado un diacrítico Unicode combinante. No construya letras manualmente mediante carácter base + marca combinante Unicode; use un carácter Unicode precompuesto o la representación HSMS correspondiente.</td>
+<td>El fichero puede contener caracteres Unicode  precompuestos con diacríticos: ç, á, ñ, ö, ā, ḍ, etc. Pero no debe onstruirlos manualmente mediante: carácter base + marca combinante Unicode</td>
+<td></td>
+</tr>
+<tr>
+<td>Apertura <code>[</code> sin cerrar.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Apertura <code>{</code> sin cerrar.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Apertura <code>&lt;</code> sin cerrar.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Apertura <code> (</code> sin cerrar.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cierre <code>]</code> sin apertura previa.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cierre <code>}</code> sin apertura previa.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cierre <code>&gt;</code> sin apertura previa.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Cierre <code>)</code> sin apertura previa.</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3>Validador editorial</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>mensaje en HSMS proofer</th>
+<th>regla HSMS</th>
+<th>referencia en el manual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Los tres puntos <code>...</code> solo pueden aparecer dentro de corchetes <code> [...]</code>.</td>
+<td>Los tres puntos <code>...</code> solo pueden aparecer dentro de corchetes  <code>[...]</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td>El calderón <code>%</code>, <code>%2</code>, <code>%3</code>, <code>¶</code>, <code>¶2</code>, <code>¶3</code> o sus formas insertadas debe ir precedido por espacio, salvo si está al inicio de línea.<br><br>El calderón <code>%</code>, <code>%2</code>, <code>%3</code>, <code>¶</code>, <code>¶2</code>, <code>¶3</code> o sus formas insertadas debe ir seguido por espacio, salvo si está al final de línea.</td>
+<td>Los signos de calderón deben aparecer separados por espacios, salvo cuando aparecen al inicio de línea o aparecen al final de línea.</td>
+<td></td>
+</tr>
+<tr>
+<td>Se han detectado dos calderones consecutivos. Puede tratarse de una marca impresa intencional o de una duplicación accidental del cajista; revísese editorialmente.</td>
+<td>En algunos impresos pueden aparecer dos calderones consecutivos</td>
+<td></td>
+</tr>
+<tr>
+<td>La línea contiene dos o más espacios ASCII consecutivos.</td>
+<td>No debe haber dos o más espacios ASCII consecutivos dentro de una línea.</td>
+<td></td>
+</tr>
+<tr>
+<td>La línea comienza con un espacio ASCII.<br><br>La línea termina con un espacio ASCII.</td>
+<td>Las líneas no deben comenzar ni terminar con espacios ASCII visibles.</td>
+<td></td>
+</tr>
+<tr>
+<td>La línea contiene <code>NBSP U+00A0</code>.<br><br>La línea contiene un <code>tabulador</code>.<br><br>La línea contiene <code>ZWSP U+200B</code>.</td>
+<td>No deben aparecer caracteres invisibles problemáticos: <code>NBSP</code>, <code>TAB</code>, <code>ZWSP</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Debe existir un espacio ASCII visible entre <code>}</code> y <code>{</code>.</td>
+<td>Debe existir un espacio ASCII visible entre una llave de cierre <code>}</code> y una llave de apertura <code>{</code> cuando ambas aparecen en la misma línea.</td>
+<td></td>
+</tr>
+<tr>
+<td>Hay un guion <code>-</code> inmediatamente antes de <code>}</code>.</td>
+<td>No debe aparecer un guion <code>-</code> inmediatamente antes de una llave de cierre <code>}</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td>Hay más de una línea vacía consecutiva.</td>
+<td>No debe haber más de una línea vacía consecutiva.</td>
+<td></td>
+</tr>
+<tr>
+<td>La línea tiene xxx caracteres y supera el máximo recomendado de 150.</td>
+<td>Las líneas excesivamente largas suelen indicar: saltos de línea perdidos; etiquetas mal cerradas; pegados accidentales; errores de OCR/HTR; corrupción del texto.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx</code> debe escribirse en mayúsculas.</td>
+<td>Las etiquetas HSMS deben escribirse en mayúsculas.</td>
+<td></td>
+</tr>
+<tr>
+<td>Las marcas de ilegibilidad válidas son <code>??</code> y <code>???</code>; no debe usarse una secuencia de cuatro o más signos <code>?</code>.</td>
+<td>Las marcas de ilegibilidad reconocidas son: <code>??</code> (palabra o parte de palabra ilegible); <code>???</code> (frase ilegible)</td>
+<td></td>
+</tr>
+<tr>
+<td>El signo <code>+</code> de continuación debe escribirse como <code>+}</code> al final de la etiqueta.<br><br>El signo <code>+</code> de continuación debe pertenecer a una etiqueta.<br><br>La etiqueta <code>{xx</code>  no permite continuación con <code>+</code>.</td>
+<td>El signo <code>+</code> indica continuación lógica del texto contenido en una etiqueta.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx</code>  termina con <code> +}</code>, pero no se encontró otra etiqueta <code>{xx</code> posterior para continuar el texto.</td>
+<td>Si una etiqueta textual termina con  <code>+}</code>, debe existir posteriormente otra etiqueta del mismo tipo.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx</code> no permite el uso de <code>=</code> como vector.<br><br>El signo <code>=</code> solo debe usarse como vector dentro de una etiqueta que lo permita.</td>
+<td>El signo <code>=</code> tiene función especial en PROOFER: marca vector en las etiquetas que lo permiten: <code>{MIN</code> y <code>{DIAG</code></td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx. </code> debe ir seguida de <code>espacio + [^ + texto</code>.</td>
+<td>Las etiquetas <code>{AD.</code> y <code>{GL.</code> tienen procesamiento especial en PROOFER.  Deben ir seguidas de: <code>espacio + [^ + texto</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3>Validador estructural</h3>
+<table style="width: 95%;" class="table table-striped mx-auto">
+<thead class="thead-dark">
+<tr>
+<th>mensaje en HSMS proofer</th>
+<th>regla HSMS</th>
+<th>referencia en el manual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El delimitador <code>&lt;</code> debe cerrarse con <code>&gt;</code> en la misma línea física.<br><br>Aparece <code>&gt;</code> sin apertura <code>&lt;</code> previa en la misma línea física.<br><br>El delimitador <code>&lt;&lt;</code> debe cerrarse con <code>&gt;&gt;</code> en la misma línea física.<br><br>Aparece <code>&gt;&gt;</code> sin apertura <code>&lt;&lt;</code> previa en la misma línea física.</td>
+<td>Los delimitadores: de abreviatura <code> &lt;...&gt;</code>    abreviatura y letra volada <code>&lt;&lt;...&gt;&gt;</code>deben abrirse y cerrarse dentro de la misma línea física.</td>
+<td></td>
+</tr>
+<tr>
+<td>El delimitador <code>&lt;...&gt;</code> no puede estar vacío.<br><br>El delimitador <code>&lt;...&gt;</code> no debe contener espacios internos.<br><br>El delimitador <code>&lt;&lt;...&gt;&gt;</code> no puede estar vacío.<br><br>El delimitador <code>&lt;&lt;...&gt;&gt;</code> no debe contener espacios internos.<br><br>Los delimitadores <code>&lt;...&gt;</code> no deben anidarse ni contener otros signos angulares.</td>
+<td>Los delimitadores: de abreviatura <code> &lt;...&gt;</code>    abreviatura y letra volada <code>&lt;&lt;...&gt;&gt;</code>no deben estar vacíos ni contener espacios internos. Tampoco deben contener signos angulares internos.</td>
+<td></td>
+</tr>
+<tr>
+<td>Los corchetes de inserción no pueden estar completamente vacíos; use <code>[ ]</code> si lo insertado es un espacio.<br><br>Los paréntesis de borrado no pueden estar completamente vacíos; use <code>( )</code> si lo borrado es un espacio.<br><br>En una inserción del copista, el texto debe seguir inmediatamente a <code>[^</code> sin espacio.<br><br>En un borrado del copista, el texto debe seguir inmediatamente a <code>(^</code> sin espacio.<br><br>En una inserción de mano no original debe escribirse <code>[^2#texto]</code>, sin espacio entre el número y <code>#</code>.<br><br>En una inserción de mano no original, el texto debe seguir inmediatamente a <code>#</code>.</td>
+<td>Regla estructural/editorial HSMS: <code>[ ... ]</code>  inserción editorial; <code>[^... ]</code>  inserción del copista; <code>( ... )</code>  borrado editorial; <code>(^... )</code>  borrado del copista</td>
+<td></td>
+</tr>
+<tr>
+<td>El signo <code>#</code> debe aparecer inmediatamente después de un número arábigo que sigue a <code>^</code>, sin espacios, como en <code>[^2#texto]</code>, <code>(^2#texto)</code> o <code>[*^2#texto]</code>.</td>
+<td>El signo <code>#</code> indica una mano no original. <code>#</code> debe aparecer inmediatamente después de un número arábigo que sigue a <code>^</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td>La reconstrucción <code>[*...]</code> no puede estar vacía.<br><br>En una reconstrucción, el texto debe seguir inmediatamente a <code>[*</code> sin espacio.<br><br>En una reconstrucción de mano no original, no debe haber espacio después de <code>^</code>.<br><br>En <code>[*^2#texto]</code> no debe haber espacio entre el número y <code>#</code>.<br><br>En <code>[*^2#texto]</code> el texto debe seguir inmediatamente a <code>#</code>.<br><br>Una reconstrucción en mano no original debe usar la forma <code>[*^2#texto]</code>.</td>
+<td>Existen dos tipos de reconstrucción textual:  reconstrucción editorial <code>[*texto]</code>;    reconstrucción en mano no original <code>[*^2#texto]</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td>La ilegibilidad entre corchetes debe marcarse como <code>[??]</code>, <code>[???]</code> o <code>[?? ???]</code>.<br><br>La ilegibilidad dentro de borrado debe marcarse como <code>(??)</code>, <code>(???)</code>, <code>(^??)</code> o <code>(^???)</code>.</td>
+<td>La ilegibilidad se marca con: <code>[??]</code>parte de palabra ilegible; <code>[???]</code> palabra/frase ilegible; <code>[?? ???]</code>combinación documentada. También puede aparecer dentro de borrados: <code>(??)</code>, <code>(???)</code>,<code>(^??)</code>, <code>(^???)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>En una sustitución de caracteres o segmentos, el borrado y la inserción deben ir juntos: <code>(x)[y]</code>, sin espacio intermedio.</td>
+<td>En una combinación borrado + inserción <code>(^o)[^a]</code>, <code> (m)[nn]</code> no debe haber espacio entre <code>)</code> y <code>[</code> cuando se trata de sustitución de caracteres o segmentos de palabra.</td>
+<td></td>
+</tr>
+<tr>
+<td>Las etiquetas no pueden aparecer dentro de corchetes de inserción, salvo etiquetas no estructurales dentro de inserciones <code>[^...]</code> en <code>{AD.}</code> o <code>{GL.}</code>.<br><br>Las etiquetas no pueden aparecer dentro de paréntesis de borrado.</td>
+<td>En general, una etiqueta no puede aparecer dentro de: <code>[ ... ]</code> o <code>( ... )</code> porque las etiquetas no son texto.</td>
+<td></td>
+</tr>
+<tr>
+<td>Los corchetes abiertos dentro de una etiqueta deben cerrarse antes de la llave que cierra esa etiqueta.<br><br>Los paréntesis abiertos dentro de una etiqueta deben cerrarse antes de la llave que cierra esa etiqueta.</td>
+<td>Los corchetes <code>[ ]</code> y paréntesis <code>( )</code> abiertos dentro de una etiqueta deben cerrarse antes de la llave <code>}</code> que cierra esa misma etiqueta.</td>
+<td></td>
+</tr>
+<tr>
+<td>Los corchetes abiertos dentro de un contenedor textual deben cerrarse antes de la llave que cierra ese contenedor.<br><br>Los paréntesis abiertos dentro de un contenedor textual deben cerrarse antes de la llave que cierra ese contenedor.</td>
+<td>Los corchetes <code>[ ]</code> y paréntesis <code>( )</code>  abiertos dentro de un contenedor textual deben cerrarse antes de la llave <code>}</code> que cierra ese contenedor.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx</code> debe escribirse en mayúsculas.</td>
+<td>Las etiquetas HSMS deben escribirse en mayúsculas.</td>
+<td></td>
+</tr>
+<tr>
+<td>Etiqueta estructural desconocida: <code>{xx</code>.</td>
+<td>Detecta etiquetas no definidos en el catálogo HSMS.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx</code> no debe llevar número.</td>
+<td>Detecta etiquetas que llevan número aunque el catálogo indique que no deben llevarlo.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx</code> debe llevar número.</td>
+<td>Detecta etiquetas que deben llevar número y no lo llevan.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{xx</code> debe usar el delimitador <code>xx</code>.</td>
+<td>Cada etiqueta debe usar el delimitador definido en el catálogo HSMS.</td>
+<td></td>
+</tr>
+<tr>
+<td>Las etiquetas <code>{CW.</code> y <code>{SG.</code> deben aparecer al comienzo de la línea.<br><br>Las etiquetas <code>{CW.</code> y <code>{SG.</code> deben aparecer después del cierre de la columna.</td>
+<td>Las etiquetas <code>{CW.</code> y <code>{SG.</code> solo pueden aparecer después del cierre de la columna del folio.</td>
+<td></td>
+</tr>
+<tr>
+<td>Las etiquetas <code>{CW.</code> y <code>{SG.</code> deben tener texto y cerrarse con <code>}</code> en la misma línea.</td>
+<td>Las etiquetas <code>{CW.</code> y <code>{SG.</code> deben tener contenido textual y cerrarse en la misma línea.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{RMK:</code> debe cerrarse con <code>}</code> en la misma línea física.<br><br>La etiqueta <code>{RMK:</code> debe terminar con punto antes de <code>}</code>.<br><br> La forma <code>{RMK:.}</code> solo está permitida en la cabecera, antes del primer folio.</td>
+<td>La etiqueta <code>{RMK:</code> debe usar <code>:</code>, cerrarse con <code>}</code> en la misma línea física, y terminar en punto <code>.</code> antes de <code>}</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td>Las <code>{RMK</code> iniciales de identificación solo pueden ocupar las seis primeras líneas del fichero.</td>
+<td>El bloque inicial de identificación puede contener hasta seis líneas <code>{RMK: ...}</code> antes del primer folio.</td>
+<td></td>
+</tr>
+<tr>
+<td>En las <code>{RMK</code> iniciales, la barra vertical no puede aparecer al comienzo del contenido.<br><br>En las <code>{RMK</code> iniciales, la barra vertical <code>|</code> no puede aparecer al final del contenido.<br><br>En las <code>{RMK</code> iniciales, la barra vertical <code>|</code> debe usarse como separador con un espacio a cada lado: <code>|</code>.</td>
+<td>Utilización de la barra vertical <code>|</code> en los <code>{RMK</code> iniciales</td>
+<td></td>
+</tr>
+<tr>
+<td>El comentario <code>{RMK</code> no debe contener puntos internos ordinarios; se admiten abreviaturas breves como <code>s.l.</code> o <code>s.n.</code>.<br><br>El comentario <code>{RMK</code> no debe contener dos puntos internos ordinarios; se permite el uso documental tras una referencia HSMS.</td>
+<td>Dentro de un comentario <code>{RMK: </code> no debe aparecer: otro punto <code>.</code> u otro dos puntos <code>:</code> antes del punto final obligatorio.</td>
+<td></td>
+</tr>
+<tr>
+<td>La barra inversa <code>\</code> solo puede aparecer dentro de la etiqueta <code>{HD. ...} </code>, <code>{HD1. ...} </code> o <code>{HD2. ...} </code> para indicar foliación antigua.</td>
+<td><code>\</code> solo puede aparecer dentro de una etiqueta <code>{HD. ...}</code>.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{HD</code> debe aparecer después del folio y antes de la primera etiqueta <code>{CBn.</code></td>
+<td>Las etiquetas <code>{HD.</code> o <code>{HDn.</code> deben aparecer dentro  del encabezamiento del folio. Es decir: después de la etiqueta <code>[fol. n]</code>; antes de la primera etiqueta <code>{CBn.</code>; nunca después de haber comenzado una columna.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{CBn.</code> debe aparecer como <code>{CBn.</code> o como <code>{CBn.}</code>.<br><br><code>{CBn.</code> debe aparecer sola en una línea.<br><br><code>{CBn</code> no se cierra antes del siguiente folio.</td>
+<td>La etiqueta de comienzo de columna <code>{CBn.</code> debe tener uno de estos dos formatos: <code>{CBn</code> o <code> {CBn.}</code>. La primera abre una columna con contenido, la segunda representa una columna vacía cerrada en la misma línea.</td>
+<td></td>
+</tr>
+<tr>
+<td>Las etiquetas de lengua no pueden estar vacías.</td>
+<td>Las etiquetas de lengua–<code>{ARB.</code>, <code>{ARG.</code>, <code>{ARM.</code>, <code>{BAS.</code>, <code>{CAL.</code>, <code>{CAT.</code>, <code>{ENG.</code>, <code>{FRN.</code>, <code>{GAL.</code>, <code>{GER.</code>, <code>{GRK.</code>, <code>{HEB.</code>, <code>{ITL.</code>, <code>{LAM.</code>, <code>{LAT.</code>, <code>{PRT.</code>, <code>{PRV.</code>– no deben estar vacías.</td>
+<td></td>
+</tr>
+<tr>
+<td>Las etiquetas <code>{AD.</code> y <code>{GL.</code> no pueden estar vacías.</td>
+<td>Las etiquetas de adición <code>{AD.</code> y glosa <code>{GL.</code> no deben estar vacías.</td>
+<td></td>
+</tr>
+<tr>
+<td>Use <code>{ILL.}</code> sin espacio interior cuando la iluminación no contiene información transcrita.</td>
+<td>La etiqueta <code>{ILL.}</code> puede aparecer vacía, pero no debe  contener únicamente espacios antes de la llave de cierre.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta <code>{INn.}</code> debe ir seguida de un espacio y de la inicial transcrita.<br><br>La etiqueta <code>{INn.</code> debe cerrarse como <code>{INn.}</code> seguida de la inicial, o contener <code>{ILL.}</code> o <code>{MIN.}</code> y después la inicial.</td>
+<td>La etiqueta de inicial <code>{INn.</code> debe: llevar número; cerrarse correctamente; aparecer en una de estas formas: <code>{INn.}</code>, <code>{INn. {ILL.}}</code> o <code>{INn. {MIN.}}</code>; ir seguida de un espacio y de la inicial transcrita.</td>
+<td></td>
+</tr>
+<tr>
+<td>No debe repetirse <code>{BLNK.}</code>; para varias líneas en blanco use un único  con observación.</td>
+<td>No debe haber más de una etiqueta <code>{BLNK.}</code> consecutivo.</td>
+<td></td>
+</tr>
+<tr>
+<td>La etiqueta  no debe estar vacía.</td>
+<td>La etiqueta <code>{SYMB.}</code> no debe estar vacía.</td>
+<td></td>
+</tr>
+<tr>
+<td>La forma segmentada de <code>{DIAG.</code> debe cerrarse con <code>}</code> en la misma línea.<br><br>La forma segmentada de <code>{DIAG.</code> no debe mezclarse todavía con continuidad <code>+}</code>.<br><br>Los segmentos internos de <code>{DIAG.</code> deben empezar con <code>|</code> y terminar con <code>|}</code> sin espacio entre la última barra y <code>}</code>.<br><br>La forma segmentada de <code>{DIAG.</code> no debe contener segmentos vacíos.<br><br>La forma segmentada de <code>{DIAG.</code> debe contener al menos dos segmentos.</td>
+<td>La etiqueta <code>{DIAG.</code> puede contener segmentos internos  separados por el carácter funcional <code>|</code>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

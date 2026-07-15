@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>HSMS - Manual HSMS proofer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="position: sticky; top: 0; height: 100vh;">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+  <div style="overflow-y: auto; height: calc(100vh - 50px);">
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+	  			<div class="user-logo">
+	  				<h3>Hispanic Seminary of<br>Medieval Studies</h3>
+	  				<div class="img" style="background-image: url(images/logo.jpg);"></div>
+	  				<h3>materiales y guías<br>de formación</h3>
+
+	  			</div>
+	  		</div>
+          <ul class="list-unstyled components mb-5">
+            <li> <a href="index.html"><span class="fa fa-home mr-3"></span>
+                inicio</a> </li>
+            <li class="active"> <a href="prooferDOS.html"><span class="fa fa-file-text-o mr-3"></span>
+                proofer DOS</a> </li>
+            <li> <a href="HSMSproofer.html"><span class="fa fa-file-text-o mr-3"></span>
+                HSMS proofer</a> </li>
+            <li> <a href="instalacion.html"><span class="fa fa-cogs mr-3"></span>
+                requisitos e instalación</a> </li>
+            <li> <a href="validacion.html"><span class="fa fa-check-square-o mr-3"></span>
+                validación de textos</a> </li>
+            <li> <a href="incidencias.html"><span class="fa fa-list mr-3"></span>
+                listado de incidencias</a> </li>
+		  </ul>
+		   <ul class="list-unstyled components mb-5"> 
+		             <li>
+            <a href="https://hispanicseminary.org/" target="_blank"><span class="fa fa-external-link mr-3"></span> HSMS</a>
+          </li>
+</ul>
+</div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+<h2>Un poco de historia: proofer DOS</h2>
+<p>A comienzos de los años setenta del pasado siglo, a propuesta de John J. Nitti, antiguo alumno de Lloyd A. Kasten y, por entonces, su colega en la Universidad de Wisconsin-Madison, el Seminario de Estudios Medievales empezó a explorar la posibilidad de diseñar una base de datos de fichas de citas lexicográficas que fuera exhaustiva y estadísticamente representativa del español antiguo. Esta base de datos tenía como fin principal la elaboración del <em>Dictionary of the Old Spanish Language</em> (DOSL) y, al mismo tiempo, satisfacer las necesidades de los lingüistas en la formulación de teorías sobre problemas tanto diacrónicos como sincrónicos de la lengua española.</p>
+<p>La creación y el aprovechamiento de esta base de datos léxica solo podían llevarse a cabo mediante el uso de la tecnología informática. Sin embargo, el punto de partida planteaba un problema fundamental: las ediciones existentes de textos medievales no podían utilizarse directamente, debido a que las intervenciones de sus editores modernos alteraban o normalizaban el texto original, introduciendo sesgos que comprometerían la fiabilidad de los datos lingüísticos. Era necesario, por tanto, preparar nuevas transcripciones paleográficas electrónicas de textos en español antiguo. El Seminario decidió así centrar sus primeros esfuerzos en sistematizar el proceso de transcripción de las fuentes manuscritas, y se ideó un sistema de representación semipaleográfica diseñado para reproducir el texto original y su disposición gráfica con la mayor fidelidad posible. Este sistema, al reducir al mínimo la intervención editorial, resolvió problemas como la normalización ortográfica, la puntuación moderna o la modificación de abreviaturas, comunes en las ediciones críticas tradicionales de textos medievales, tanto manuscritos como impresos. El nuevo método de transcripción fue descrito por primera vez en 1977 por Kenneth Buelow y David Mackenzie en <em>A Manual of Manuscript Transcription for the Dictionary of the Old Spanish Language</em>.</p>
+<p>Una vez establecidas las normas de transcripción, el siguiente paso fue desarrollar las herramientas informáticas necesarias para procesar y explotar los archivos electrónicos resultantes. Con este fin, Jean Lentz escribió en <a href="https://es.wikipedia.org/wiki/Pascal_(lenguaje_de_programaci%C3%B3n)">Pascal</a> diversos programas, entre ellos <code>proofer</code>, para la verificación semiautomática de las transcripciones; <code>concord</code>, para la generación de concordancias; y <code>citeslip</code>, para la producción de fichas lexicográficas.</p>
+<p>El programa <code>proofer</code> es una herramienta de validación para transcripciones de manuscritos preparadas de acuerdo con las convenciones del Hispanic Seminary of Medieval Studies (HSMS). Diseñado originalmente para funcionar en el entorno <a href="https://es.wikipedia.org/wiki/MS-DOS">MS-DOS</a>, y con una última actualización de enero de 1997, <code>proofer</code> puede utilizarse hoy en Windows con la ayuda de un <a href="https://es.wikipedia.org/wiki/DOSBox">emulador</a>.</p>
+<p><img src="images/fig_1.jpg" alt="proofer en el emulador DOSBox" /></p>
+<center><p><strong>Figura 1.</strong> <code>proofer</code> funcionando en DOSBox</p></center>
+<p>El programa <code>proofer</code> analiza los ficheros de texto plano y señala posibles incidencias estructurales, editoriales y técnicas que pueden requerir revisión, generando como resultado un fichero de diagnóstico en el que se indican los errores detectados. A partir de este diagnóstico el usuario hace las correcciones oportunas en la transcripción paleográfica.</p>
+<p><img src="images/fig_2.jpg" alt="diagnóstico de proofer" /></p>
+<center><p><strong>Figura 2.</strong> Fichero de diagnóstico de <code>proofer</code></p></center>      </div>
+		</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
